@@ -1,0 +1,13 @@
+- content_for :javascripts do
+  = event_map @event
+
+#show
+  .ribbon
+    .row
+      .crud
+        %p= link_to 'Uredi', edit_event_path(@event)
+        %p= link_to 'Kopiraj', copy_event_path(@event)
+      %h2= @event.title
+      = partial 'events/show_in_feed', :event => @event
+
+      #map

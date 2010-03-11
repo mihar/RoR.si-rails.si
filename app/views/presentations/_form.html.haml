@@ -1,0 +1,33 @@
+%div
+  = form.label :title, "Naziv"
+  %div= form.text_field :title
+
+%div
+  = form.label :user_id, "Uporabnik"
+  %div= form.collection_select :user_id, User.all, :id, :twitter
+
+%div
+  = form.label :other_speakers, "Ostali predavatelji"
+  %div= form.text_field :other_speakers
+
+%div
+  = form.label :url
+  %div= form.text_field :url
+
+%div
+  = form.label :location, "Lokacija"
+  %div= form.text_field :location
+
+%div
+  = form.label :date_of, "Datum"
+  %div= form.date_select :date_of
+
+%div
+  = form.label :description, "Opis"
+  %div= form.text_area :description
+  %p.instruct
+    == Format description using #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
+
+-#%div
+  -#= form.label :embed
+  -#%div= form.text_area :embed

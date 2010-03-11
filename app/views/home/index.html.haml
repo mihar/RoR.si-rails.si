@@ -1,0 +1,67 @@
+- content_for :beta_sidebar do
+  %ul#jobs
+    - @recent_jobs.each do |job|
+      %li
+        %h3= link_to job.title, job
+        %p= truncate(job.description, :length => 250)
+
+#content
+  #topics.row
+    %h2= link_to 'Diskusije', topics_path
+    %table
+      - @recent_topics.each do |topic|
+        %tbody
+          %tr
+            %td.title
+              %h3= link_to topic.title, topic_posts_path(topic)
+            %td.postcount
+              %p= pluralize_posts topic.posts.count
+          %tr
+            %td.user
+              %p
+                by
+                = topic.user
+            %td.infos
+              %p
+                = topic.created_at.to_s(:time)
+                on
+                = topic.created_at.to_s(:fancy_date)
+
+  #presentations
+    %h2= link_to 'Predavanja', events_and_presentations_path(:anchor => "presentations")
+    %ul
+      - @recent_presentations.each do |presentation|
+        %li
+          %h3= link_to presentation.title, presentation
+          - unless parse_presenter(presentation).nil? || parse_presenter(presentation).empty?
+            %p== by #{parse_presenter(presentation)}
+  
+  #events
+    %h2= link_to "Dogodki", events_and_presentations_path(:anchor => "events")
+    %p= link_to @upcoming_event.title, @upcoming_event
+    
+  #blogs
+    %h2= link_to "Blogi", blogs_and_tweets_path(:anchor => "blogs")
+    %ul
+      - @recent_blogs.each do |blog|
+        %li
+          = link_to blog.title, blog.normalized_url
+
+  #twitter
+    %h2= link_to "Tweeti", blogs_and_tweets_path(:anchor => "blogs")
+    %ul
+      - @recent_tweets.each do |tweet|
+        %li= link_to_tweet(tweet)    
+
+  #apps
+    %h2= link_to "Aplikacije", developers_and_apps_path(:anchor => "apps")
+    %ul
+      - @recent_apps.each do |app|
+        %li= link_to app.title, app
+
+  #people
+    %h2= link_to "Razvijalci", developers_and_apps_path(:anchor => "developers")
+    .collage
+      - @users.in_groups_of(24, false).each_with_index do |users, index|
+        %div{collage_div_attributes(index)}
+          = collage_of(users)

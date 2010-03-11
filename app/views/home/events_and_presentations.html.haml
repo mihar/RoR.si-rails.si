@@ -1,0 +1,18 @@
+#events
+  = title "Dogodki"
+  - @events.each do |event|
+    %h2= link_to event.title, event
+    %p.time
+      = event.date.to_s(:time)
+      on
+      = event.date.to_s(:fancy_date)
+    %p.desc
+      =event.description
+    %p.loc
+      =event.location
+  %p.crud
+    =link_to "Nov dogodek", new_event_path
+#presentations
+  = title "Predavanja", true, "secondary"
+  - @presentations.each do |presentation|
+    %h2= link_to presentation.title, presentation

@@ -1,0 +1,62 @@
+=title "Moj račun"
+= error_messages_for :user
+
+- form_for setup_user(@user) do |user_form|
+  .personals
+    .fieldset
+      %p
+        = user_form.label :first_name, "Ime"
+      %p
+        = user_form.text_field :first_name
+      %p
+        = user_form.label :last_name, "Priimek"
+      %p
+        = user_form.text_field :last_name
+  
+      %p
+        = user_form.label :email
+      %p
+        = user_form.text_field :email
+      
+    .fieldset
+      %p
+        = user_form.label :about, "Par besed"
+      %p
+        = user_form.text_area :about, :rows => 10
+  .elsewheres
+    .fieldset
+      %p
+        = user_form.label :twitter
+      %p
+        = user_form.text_field :twitter
+      %p.instruct Navedite uporabniško ime, npr: janez_n
+
+      %p
+        = user_form.label :github
+      %p
+        = user_form.text_field :github
+      /
+        %div
+          = user_form.label :company_id, "Podjetje"
+          %div= user_form.select :company_id, companies_select_options, :include_blank => true
+
+      - user_form.fields_for :feed do |feed_form|
+        %p
+          = feed_form.label :feed_url, "Blog Feed URL"
+        %p
+          = feed_form.text_field :feed_url
+        
+    .fieldset
+      %p
+        = user_form.label :homepage, "Domača stran"
+      %p
+        = user_form.text_field :homepage
+      %p
+        = user_form.label :linkedin, "LinkedIn profil"
+      %p
+        = user_form.text_field :linkedin
+    
+
+  .buttons
+    = user_form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
+

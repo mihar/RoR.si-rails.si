@@ -1,0 +1,34 @@
+.personals
+  %p
+    = form.label :title, "Naziv"
+  %p
+    = form.text_field :title
+
+  %p
+    = form.label :location, "Lokacija"
+  %p
+    = form.text_field :location
+  %p.instruct ex: Maistrova 32, 2000 Maribor
+
+  %p
+    = form.label :date, 'Datum in ura'
+  %p
+    = form.text_field :date, :value => @event.date.try(:to_s, :fancy_date_with_time_with_day)
+  %p.instruct
+    ie "9/15 7PM" or "tomorrow at 6:45pm" or
+    %br
+    "3rd tuesday this september at 7pm"
+  #calendar
+
+.elsewheres
+  %p
+    = form.label :description, "Opis"
+  %p
+    = form.text_area :description
+  %p.instruct
+    == Format description using #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
+  
+/
+  .checkbox_field
+    = form.label :recurring, "Ponavljajoče"
+    = form.check_box :recurring

@@ -1,0 +1,10 @@
+one:
+  id: 1
+  title: MyString
+  posted_at: 2010-03-11 10:58:51
+  user_id: 1
+two:
+  id: 2
+  title: MyString
+  posted_at: 2010-03-11 10:58:51
+  user_id: 1

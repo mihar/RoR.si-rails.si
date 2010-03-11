@@ -1,0 +1,12 @@
+= title "Delovna mesta"
+
+- @jobs.each do |job|
+  %div[job]
+    %h3
+      = link_to job.title, job
+    %p= truncate strip_tags(job.cached_description_html), :length => 250
+    %p== #{job.location}, #{job.created_at.to_s(:fancy_date)}
+%p.crud.row
+  = link_to "Nova zaposlitev", new_job_path
+= will_paginate collection
+= render :partial => 'about'

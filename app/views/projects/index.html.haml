@@ -1,0 +1,16 @@
+#index
+  .ribbon
+    .row
+      %h2 Projekti
+      - collection.each do |project|
+        %div[project]
+          %h3
+            = link_to project, project.github_url
+            by
+            = link_to project.user.github, project.user
+          %p
+            - if project.description.present?
+              ~ project.description
+            - else
+              Brez opisa
+      = will_paginate collection

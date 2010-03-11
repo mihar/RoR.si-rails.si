@@ -1,0 +1,26 @@
+= title "Diskusije"
+
+%table
+  - @topics.each do |topic|
+    %tbody
+      %tr
+        %td.topicinfo
+          %h2= link_to topic, topic_posts_path(topic)
+        %td.postcount
+          %p.posts= pluralize_posts topic.posts.count
+      %tr
+        %td.time_and_owner
+          %p
+            = topic.created_at.to_s(:time)
+            on
+            = topic.created_at.to_s(:fancy_date)
+            by
+            = topic.user
+        %td.crud
+          %p
+            = link_to 'Uredi', edit_topic_path(topic)
+            |
+            = link_to 'Odstrani', topic_path(topic), :confirm => 'Ste prepričani?', :method => :delete
+
+%p.crud
+  = link_to 'Nova diskusija', new_topic_path

@@ -1,0 +1,16 @@
+%p
+  %strong Body:
+  =h @post.body
+%p
+  %strong Body html:
+  =h @post.body_html
+%p
+  %strong User:
+  =h @post.user_id
+%p
+  %strong Topic:
+  =h @post.topic_id
+
+= link_to 'Edit', edit_object_url
+|
+= link_to 'Back', collection_url

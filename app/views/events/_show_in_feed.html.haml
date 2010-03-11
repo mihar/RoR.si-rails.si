@@ -1,0 +1,12 @@
+%ul.details
+  %li.clearfix
+    .detail= event.date.to_s(:fancy_date_with_time)
+    .label Kdaj
+
+  %li.clearfix
+    .detail= event.location
+    .label Kje
+
+  %li.clearfix.last
+    .detail= event.cached_description_html
+    .label Kaj

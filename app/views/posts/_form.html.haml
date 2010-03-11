@@ -1,0 +1,7 @@
+= error_messages_for :post
+- form_for [@topic, @post] do |form|
+  %fieldset
+    %div= form.text_area :body
+      
+    .buttons
+      %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'

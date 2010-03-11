@@ -1,0 +1,16 @@
+#edit
+  .ribbon
+    .row
+      .crud
+        %p= link_to 'Odstrani', presentation_path(@presentation), :method => :delete, :confirm => 'Ste prepričani?'
+
+      %h2 Uredi predstavitev
+
+      = error_messages_for :presentation
+
+      - form_for(@presentation) do |form|
+        .fieldset
+          = partial 'presentations/form', :form => form
+        .buttons
+          %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
+

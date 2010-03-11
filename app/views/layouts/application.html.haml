@@ -1,0 +1,13 @@
+!!! Strict
+%html
+  %head
+    %title= yield :title
+    = stylesheet_link_tag 'style', :media => 'screen'
+  %body{body_attrs}
+    #wrap
+      = render :partial => '/shared/header'
+      = partial 'shared/flashes'
+      = partial 'shared/subnav'
+      #content
+        = yield
+      = partial 'shared/footer'

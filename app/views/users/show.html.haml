@@ -1,0 +1,13 @@
+= title @user
+.avatar= image_tag @user.gravatar_url(:size => 128)
+
+.about= @user.about
+
+- if @user.homepage?
+  .homepage= link_to_self @user.homepage
+- if @user.linkedin?
+  .linkedin= link_to_self @user.linkedin
+- if @user.twitter?
+  .twitter= link_to_twitter @user.twitter
+- if @user.github?
+  .github= link_to_github @user.github

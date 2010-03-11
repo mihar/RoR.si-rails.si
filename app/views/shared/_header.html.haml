@@ -1,0 +1,25 @@
+#head
+  %ul#nav
+    %li
+      %a{:href => "http://rubyonrails.si/"} Povzetek
+    %li
+      %a{:href => "http://rubyonrails.si/screencasti"} Screencasti
+    %li
+      %a{:href => "http://rubyonrails.si/download"} Download
+    %li
+      %a{:href => "http://rubyonrails.org/docs"} Dokumenti
+    %li.active
+      = link_to "Skupnost", root_path
+      
+  - if body_attrs[:id] == "home-index"
+    - rails_si_head = "Ruby on Rails Slovenija"
+  - else
+    - rails_si_head = "Rails.si"
+  .masthead
+    %h1= link_to rails_si_head, root_path
+  - img = image_tag current_user.gravatar_url(:size => 40)    	
+  %ul.authentication
+    %li.link_img
+      = link_to img, current_user
+    - authentication_links.each_with_index do |link, i|
+      %li{:class => "link_" + i.to_s}= link

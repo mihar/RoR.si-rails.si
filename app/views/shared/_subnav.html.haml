@@ -1,0 +1,14 @@
+#sidebar
+  %ul#subnav
+    %li.topics
+      = link_to "Diskusije", topics_path
+    %li.events_and_presentations
+      = link_to "Dogodki in Predavanja", events_and_presentations_path
+    %li.blogs_and_tweets
+      = link_to "Blogi in Tweeti", blogs_and_tweets_path
+    %li.developers_and_apps
+      = link_to "Razvijalci in Aplikacije", developers_and_apps_path
+    /
+      %li.jobs
+        = link_to "Delovna mesta", jobs_path
+  = yield :sidebar

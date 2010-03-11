@@ -1,0 +1,13 @@
+config/database.yml
+log/*.log
+log/development.log
+tmp
+db/*.sqlite3
+public/stylesheets/*.css
+public/stylesheets/lib
+coverage.data
+metrics
+*.swp
+*~
+*.swo
+.DS_Store

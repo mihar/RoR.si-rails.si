@@ -1,0 +1,22 @@
+%div
+  = form.label :title, "Naziv"
+  %div= form.text_field :title
+
+%div
+  = form.label :location, "Lokacija"
+  %div= form.text_field :location
+
+%div
+  = form.label :organization, "Organizacija"
+  %div= form.text_field :organization
+
+%div
+  = form.label :email, "Kontaktni email"
+  %div= form.text_field :email
+
+%div
+  = form.label :description, "Opis"
+  %div= form.text_area :description
+  %p.instruct
+    == Format description using #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
+

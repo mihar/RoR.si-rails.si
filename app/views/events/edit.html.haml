@@ -1,0 +1,10 @@
+=title "Uredi dogodek"
+%p.crud.row
+  = link_to 'Odstrani', event_path(@event), :method => :delete, :confirm => 'Ste prepričani?'
+= error_messages_for :event
+
+- form_for(@event) do |form|
+  .fieldset
+    = partial '/events/fields', :form => form
+    .buttons
+      = form.submit 'Update', :disable_with => 'Prosimo počakajte...'

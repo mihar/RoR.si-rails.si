@@ -1,0 +1,17 @@
+= title "Nova diskusija"
+= error_messages_for :topic
+
+- form_for @topic do |form|
+  %fieldset
+    %div
+      = form.label :title, "Naziv"
+      %div= form.text_field :title
+      
+    - form.fields_for :posts do |post_form|
+      %div
+        = post_form.hidden_field :user_id
+        = post_form.label :body, "Besedilo"
+        %div= post_form.text_area :body
+        
+    .buttons
+      %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'

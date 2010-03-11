@@ -1,0 +1,12 @@
+one:
+  id: 1
+  body: MyText
+  body_html: MyText
+  user_id: 1
+  topic_id: 1
+two:
+  id: 2
+  body: MyText
+  body_html: MyText
+  user_id: 1
+  topic_id: 1

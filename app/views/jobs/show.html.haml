@@ -1,0 +1,20 @@
+#show
+  .ribbon
+    .row
+      .crud
+        - if user_session.edit_job?(@job)
+          %p== #{link_to 'Edit', edit_job_path(@job)} for another #{user_session.editing_time_remaining(@job)} minutes
+      %h2== #{@job.title} at #{@job.organization}
+
+      - unless @job.email.blank?
+        %ul.details
+          %li.clearfix
+            .detail= @job.email
+            .label Prijavi se
+          %li.clearfix
+            .detail= @job.location
+            .label Kje
+          %li.clearfix.last
+            .detail= @job.cached_description_html
+            .label Kaj
+

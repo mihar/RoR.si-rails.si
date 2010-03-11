@@ -1,0 +1,7 @@
+= title "Uredi zaposlitev"
+= error_messages_for :job
+
+- form_for(@job) do |form|
+  = partial 'jobs/form', :form => form
+  %p= "#{form.submit 'Osveži', :disable_with => 'Prosimo počakajte...'}"
+  %p= link_to 'Odstrani', job_path(@job), :method => :delete, :confirm => 'Ste prepričani?'

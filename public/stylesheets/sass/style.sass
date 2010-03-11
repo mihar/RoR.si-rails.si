@@ -1,0 +1,408 @@
+!columns = 16
+!width = 960
+!gutter = 30
+
+@import lib/grid_system.sass
+@import lib/text.sass
+@import foot.sass
+
+!red = rgb(158, 12, 15)
+!green = rgb(221, 255, 153)
+!red_lite = #b45136
+!red_mid = #ab3425
+!gray_dark = rgb(68, 68, 68)
+!gray_lite = rgb(153, 153, 153)
+!default_gray = rgb(102, 102, 102)
+
+=sans
+  :font-family Helvetica, Arial, sans-serif
+=uitype
+  :font-family Verdana, Tahoma, Geneva, Helvetica, Arial, sans-serif
+=bold
+  :font-weight bold
+=normal
+  :font-weight normal
+=ultra_small_text
+  :font-size 12px
+=small_text
+  :font-size 14px
+=mid_text
+  :font-size 16px
+
+=link_sans
+  +small_text
+  +bold
+  +sans
+=small_sans
+  +small_text
+  +normal
+  +sans
+=ui_links
+  +ultra_small_text
+  +bold
+  +uitype
+
+body
+  :background url(/images/backdrop.gif) repeat-x
+  :color = !default_gray
+
+a
+  :color = !red
+#wrap
+  +container
+  :position absolute
+  :left 50%
+  :margin-left = (!width / 2) * (-1) + "px"
+  
+// HEAD    
+#head
+  +wrapper(16)
+  #nav
+    :margin 0
+    +wrapper(12)
+    +prefix(4)
+    :height 60px
+    
+    li
+      :display inline
+      :padding-right = !gutter/2 + "px"
+      a
+        :line-height 35px
+        :color white
+        +link_sans
+        :text-shadow 1px 1px 1px #454545
+        :border-top = "3px solid" + !red_lite
+        :padding-top 6px
+        :padding-bottom 13px
+        &:hover
+          :color = !green
+          :border-top-color white
+    li.active
+      a
+        :color = !green
+        :border-top-color = !green            
+  .masthead
+    +column(4)
+    +suffix(8)
+    :text-align right
+    h1
+      +bold
+      a
+        :color = !gray_dark
+  .authentication
+    +column(4)
+    :position absolute
+    :top -10px
+    :left 50%
+    :margin-left = 4 * !column + 4.5 * !gutter + "px"
+    :padding-top 15px
+    :height 40px
+    :background url(/images/loginbobonu.gif) no-repeat
+    :list-style none
+    li
+      +link_sans
+      +ultra_small_text
+    li.link_img
+      :position absolute
+      :left 0px
+      :top -5px
+      a
+        :border 0
+        :display block
+        img
+          :display block
+    li.link_0
+      :padding-left 50px
+      :padding-right 25px
+      +column(1)
+      +first
+    li.link_1
+      +column(1)
+      +last
+
+#home-index
+  #head
+    .masthead
+      +column(8)
+      +prefix(4)
+      :text-align left
+      
+
+=nav_inactive
+  :color = !red
+  :text-shadow 1px 1px 1px #f5ffe0
+=nav_active
+  :color = !green
+  :background = !red
+  :text-shadow 1px 1px 1px #454545
+
+#sidebar
+  +wrapper(4)
+  
+  #subnav
+    +column(4)
+    :list-style none
+    :background #f5ffe0 url(/images/navdropside_flip.gif) repeat-y left
+    :-moz-border-radius 7px
+    :-webkit-border-radius 7px
+    :padding
+      :top = !gutter/8 + "px"
+      :bottom = !gutter/8 + "px"
+    
+    li
+      :border-top
+        :width 1px
+        :style solid
+        :color #ddff99
+      &:first-child
+        :border-top none
+      a
+        :display block
+        :padding-left = !gutter/2 + "px"
+        :font-size 18px
+        :line-height 40px
+        +nav_inactive
+        &:hover
+          +nav_active
+  #jobs
+    +column(4)
+        
+
+body#home-events_and_presentations #wrap #subnav li.events_and_presentations a
+  +nav_active
+  :color white
+body.topics #wrap #subnav li.topics a, body.posts #wrap #subnav li.topics a
+  +nav_active
+  :color white
+body#home-blogs_and_tweets #wrap #subnav li.blogs_and_tweets a
+  +nav_active
+  :color white
+body#home-developers_and_apps #wrap #subnav li.developers_and_apps a
+  +nav_active
+  :color white
+body.jobs #wrap #subnav li.jobs a
+  +nav_active
+  :color white
+
+// FLASH
+
+flash success error notice
+
+#flash
+  +column(12)
+  +prefix(4)
+  
+  div
+    :padding
+      :left = !gutter/2 + "px"
+      :right = !gutter/2 + "px"
+      :top = !gutter/4 + "px"
+      :bottom = !gutter/4 + "px"
+    :border
+      :width 1px
+      :style solid
+      :color #CCC
+  
+  #flash_success
+    :border-color = !green
+  #flash_error
+    :border-color = !red
+  #flash_notice
+    :border-color = !gray_lite
+  
+// CONTENT
+  
+#content
+  +wrapper(12)
+  h1
+    +column(12)
+    :position absolute
+    :top 60px
+    +bold
+    :border-bottom 3px double #BABABA
+    :text-shadow 1px 2px 1px #f5ffe0
+  h1.secondary
+    :position static
+    :top inherit
+  h2
+    :border-bottom 3px double #BABABA
+    a
+      :color = !gray_dark
+      &:hover
+        :color = !red
+  form
+    +column(12)
+  .row
+    +column(12)
+    
+    
+  #events
+    +column(4)
+  #presentations
+    +column(8)
+    ul
+      :list-style none
+  #topics
+    +column(12)
+    table
+      tbody
+        :border-bottom 1px solid #CCC
+      .title
+        +column(8)
+        +first
+        h3
+          :margin-bottom 0
+          :line-height 24px
+      .postcount
+        +column(4)
+        +last
+        p
+          :margin-bottom 0
+          :line-height 24px
+      .user
+        +column(8)
+        +first
+        +small_sans
+        p
+          :margin-top 0
+      .infos
+        +column(4)
+        +last
+        +small_sans
+        p
+          :margin-top 0
+  #blogs
+    +column(8)
+  #twitter
+    +column(4)
+    +small_sans
+    +ultra_small_text
+    ul
+      :list-style none
+      li
+        :border-bottom 1px solid #CCC
+  #people
+    +column(4)
+  #apps
+    +column(8)
+
+// Controller specific
+        
+#topics-index
+  table
+    +wrapper(12)
+    tr
+      :position relative
+      +wrapper(12)
+      .topicinfo
+        +column(12)
+        h2
+          :border-bottom-style solid
+          :border-bottom-width 1px
+          :margin-bottom 4px
+      .postcount
+        +column(4)
+        :position absolute
+        :right 0
+        :top 7px
+      .time_and_owner
+        +column(8)
+        +small_sans
+        p
+          :margin-top 0
+      .crud
+        +column(4)
+        p
+          :margin-top 0
+  .crud
+    +column(12)
+#posts-index
+  table
+    +wrapper(12)
+    tr
+      +wrapper(12)
+      .user
+        +column(4)
+      .timestamps, .crud
+        +small_sans
+        +column(4)
+      .crud
+        +ultra_small_text
+        +uitype        
+        +bold
+        :text-align center
+      .body
+        :border-top 1px solid #BABABA
+        :margin-top 3px
+        +column(12)
+        +small_sans
+  .crud
+    +column(12)
+    
+#topics-index .crud, #posts-index .crud,
+#home-events_and_presentations .crud
+  +ultra_small_text
+  +uitype
+  +bold
+
+#home-events_and_presentations
+  h2
+    +column(12)
+    :border-bottom-style solid
+    :border-bottom-width 1px
+    :margin-bottom 4px
+  #events
+    .time
+      +column(4)
+      :position absolute
+      +small_sans
+      :right 0
+      :line-height 40px
+    .desc
+      +column(8)
+      :margin-top 3px
+    .loc
+      +column(4)
+      :margin-top 3px
+      +small_text
+    .crud
+      +column(12)
+
+#home-blogs_and_tweets
+  h2
+    :position absolute
+    :margin-top -50px
+  #blogs
+    h2
+      +column(8)
+      +first
+      +last
+  #twitter
+    h2
+      +column(4)
+      +first
+      +last
+    p.author
+      :text-align right
+      :line-height 16px
+      .img
+        img
+          :vertical-align middle
+      .twu
+        :padding-right 5px
+  
+form
+  .personals
+    +column(6)
+    +first
+  .elsewheres
+    +column(6)
+    +last
+  .instruct
+    +small_sans
+    +ultra_small_text
+  .buttons
+    +column(6)
+    +prepend(6)
+    +first
+    +last

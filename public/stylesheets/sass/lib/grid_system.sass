@@ -1,0 +1,119 @@
+// Define these before you import the grid system
+
+// Width of the container, number in pixels
+!width    ||= 960
+// Number of columns in the layout
+!columns  ||= 12
+// Spacing between columns, number in pixels
+!gutter   ||= 20
+
+// Importing default rules
+
+@import reset.sass
+@import text.sass
+
+// From here on in, sizes are calculated arithmetically
+
+!column = (!width / !columns) - !gutter
+
+// Width mixin
+
+=wrap(!n)
+  :width = (!column * !n) + (!gutter * !n) + "px"
+  
+=width(!n)
+  :width = (!column * !n) + (!gutter * (!n - 1)) + "px"
+  
+// Default grid column positioning
+
+=positioning
+  :display inline
+  :float left
+
+=gutter
+  :margin
+    :left = (!gutter / 2) + "px"
+    :right = (!gutter / 2) + "px"
+
+// Column mixin
+
+=column(!n)
+  +positioning
+  +gutter
+  +width(!n)
+
+// Wrapper mixin
+
+=wrapper(!n)
+  +positioning
+  +wrap(!n)
+
+// Prepend and append padding
+
+=prepend(!n)
+  :padding-left = (!n * !column) + (!gutter * (!n)) + "px"
+=append(!n)
+  :padding-right = (!n * !column) + (!gutter * (!n)) + "px"
+
+// Prefix and suffix margins
+
+=prefix(!n)
+  :margin-left = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + "px"
+=suffix(!n)
+  :margin-right = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + "px"
+
+// Straightforward centered container
+
+=container
+  :position relative
+  :margin
+    :left auto
+    :right auto
+  :width = !width + "px"
+
+// First and last child
+// .. if nested in another element which is several columns wide
+// .. if possible, use +wrapper(x) for parent element, doesnt margin
+
+=first
+  :margin-left 0
+=last
+  :margin-right 0
+
+// Clearing floats
+
+=clear
+  :clear both
+  :display block
+  :overflow hidden
+  :visibility hidden
+  :width 0
+  :height 0
+
+=clearfix
+  :display inline-block
+  :display block
+  &:after
+    :clear both
+    :content ' '
+    :display block
+    :font-size 0
+    :line-height 0
+    :visibility hidden
+    :width 0
+    :height 0
+  * html &
+    :height 1%
+    
+// You can undo inline floating and margins for special cases,
+// like when you want to position an object absolutely or statically
+
+=undo_positioning
+  :display inherit
+  :float   inherit
+=undo_gutter
+  :margin  inherit
+
+=undo
+  +undo_positioning
+  +undo_gutter
