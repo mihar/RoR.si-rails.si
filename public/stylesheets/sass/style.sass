@@ -95,7 +95,7 @@ a
     :top -10px
     :left 50%
     :margin-left = 4 * !column + 4.5 * !gutter + "px"
-    :padding-top 15px
+    :padding-top 7px
     :height 40px
     :background url(/images/loginbobonu.gif) no-repeat
     :list-style none
@@ -112,7 +112,7 @@ a
         img
           :display block
     li.link_0
-      :padding-left 50px
+      :padding-left 56px
       :padding-right 25px
       +column(1)
       +first
@@ -331,11 +331,24 @@ flash success error notice
         +uitype        
         +bold
         :text-align center
+      .gravatar
+        +column(2)
+        :position absolute
+        :margin-top 10px
       .body
-        :border-top 1px solid #BABABA
-        :margin-top 3px
-        +column(12)
+        :margin-top -10px
+        :border-bottom 1px solid #BABABA
+        :min-height 125px
+        :padding-bottom 10px
+        +column(10)
+        +prepend(2)
         +small_sans
+    tr.first
+      :margin-top 10px
+    .post_0
+      .first
+        :margin-top 0
+        
   .crud
     +column(12)
     

@@ -1,27 +1,31 @@
 = title @topic
 
 %table
-  - @posts.each do |post|
-    %tr
-      %td.user
-        %p
-          =post.user
-      %td.timestamps
-        %p
-          (
-          = post.updated_at.to_s(:time)
-          on
-          = post.updated_at.to_s(:fancy_date)
-          )
-      %td.crud
-        %p
-          = link_to 'Uredi', edit_topic_post_path(@topic, post)
-          |
-          = link_to 'Odstrani', [@topic, post], :confirm => 'Ste prepričani?', :method => :delete
-    %tr
-      %td.body{:colspan => 3}
-        %p
-          = post.cached_body_html
+  - @posts.each_with_index do |post, i|
+    %tbody{:class => "post_#{i}"}
+      %tr.first
+        %td.user
+          %p
+            =post.user
+        %td.timestamps
+          %p
+            (
+            = post.updated_at.to_s(:time)
+            on
+            = post.updated_at.to_s(:fancy_date)
+            )
+        %td.crud
+          %p
+            = link_to 'Uredi', edit_topic_post_path(@topic, post)
+            |
+            = link_to 'Odstrani', [@topic, post], :confirm => 'Ste prepričani?', :method => :delete
+      %tr.second
+        %td.gravatar
+          - img = image_tag(post.user.gravatar_url(:size => 90))
+          = link_to img, post.user
+        %td.body{:colspan => 3}
+          %p
+            = post.cached_body_html
 
 %p.crud
   = link_to 'Novo sporočilo', new_topic_post_path
