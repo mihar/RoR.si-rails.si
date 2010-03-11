@@ -346,12 +346,15 @@ flash success error notice
   +bold
 
 #home-events_and_presentations
-  h2
-    +column(12)
-    :border-bottom-style solid
-    :border-bottom-width 1px
-    :margin-bottom 4px
   #events
+    +wrapper(12)
+    h2
+      +column(12)
+      +first
+      +last
+      :border-bottom-style solid
+      :border-bottom-width 1px
+      :margin-bottom 4px
     .time
       +column(4)
       :position absolute
@@ -360,13 +363,17 @@ flash success error notice
       :line-height 40px
     .desc
       +column(8)
+      +first
       :margin-top 3px
     .loc
       +column(4)
+      +last
       :margin-top 3px
       +small_text
     .crud
       +column(12)
+  #presentations
+    +wrapper(12)
 
 #home-blogs_and_tweets
   h2
