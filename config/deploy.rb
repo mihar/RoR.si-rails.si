@@ -1,7 +1,7 @@
 set :application, "rails.si"
 set :domain, "racker-deploy"
 set :deploy_to, "/webroot/rails.si"
-set :repository, 'git@home:gvido.git'
+set :repository, 'git@github.com:mihar/RoR.si-rails.si.git'
 set :scm, 'git'
 
 namespace :vlad do
@@ -10,7 +10,6 @@ namespace :vlad do
   remote_task :symlink do
     puts "Linking shared stuff to current release..."
     run "ln -s #{shared_path}/database.yml #{current_release}/config"
-    run "ln -s #{shared_path}/gmaps.rb #{current_release}/config/initializers"
     run "ln -s #{shared_path}/assets #{current_release}/public/assets"
   end
   
@@ -26,11 +25,11 @@ namespace :vlad do
     Rake::Task['vlad:start_app'].invoke
   end
 
-  # desc "Cleanup SASS leftovers"
-  # remote_task :cleanup_sass do
-  #   puts "Cleaning up SASS leftovers..."
-  #   run "rm #{current_release}/public/stylesheets/*.css;"
-  # end
-  # 
-  # remote_task :start_app => :cleanup_sass
+  desc "Cleanup SASS leftovers"
+  remote_task :cleanup_sass do
+    puts "Cleaning up SASS leftovers..."
+    run "rm #{current_release}/public/stylesheets/*.css;"
+  end
+  
+  remote_task :start_app => :cleanup_sass
 end
