@@ -1,0 +1,58 @@
+﻿ pre code[class]:after
+  content: 'highlight: ' attr(class)
+  display: block
+  text-align: right
+  font-size: smaller
+  color: #CCC
+  background: white
+  border-top: solid 1px
+  padding-top: 0.5em
+
+
+pre
+  code
+    display: block
+    background: #F0F0F0
+    color: black
+
+  .ruby .subst, .xml .title, .lisp .title
+    color: black
+
+  .string, .title, .parent, .tag .attribute .value
+    color: #800
+
+  .rules .value
+    color: #800
+
+    .number
+      color: #800
+
+  .preprocessor, .ruby .symbol, .instancevar, .aggregate, .template_tag, .django .variable, .smalltalk .class, .addition, .flow, .stream, .bash .variable
+    color: #800
+
+  .apache
+    .tag, .cbracket
+      color: #800
+
+  .comment, .annotation, .template_comment, .diff .header, .chunk
+    color: #888
+
+  .number, .date, .regexp, .literal
+    color: #080
+
+  .smalltalk
+    .symbol, .char
+      color: #080
+
+  .change
+    color: #080
+
+  .label, .javadoc, .ruby .string, .decorator, .filter .argument, .localvars, .array, .attr_selector, .pseudo, .pi, .doctype, .deletion, .envvar, .shebang, .apache .sqbracket
+    color: #88F
+
+  .keyword, .id, .phpdoc, .title, .built_in, .aggregate, .smalltalk .class, .winutils, .bash .variable, .apache .tag
+    font-weight: bold
+
+  .html
+    .css, .javascript, .vbscript
+      opacity: 0.5

@@ -4,7 +4,6 @@
 
 @import lib/grid_system.sass
 @import lib/text.sass
-@import foot.sass
 
 !red = rgb(158, 12, 15)
 !green = rgb(221, 255, 153)
@@ -472,3 +471,24 @@ form
     +prepend(6)
     +first
     +last
+    
+    
+    
+#footer
+  :background url(/images/footerdrop.gif) center top no-repeat
+  +wrapper(16)
+  :padding-top 60px
+  :padding-bottom 20px
+  p 
+    +column(12)
+    +prefix(4)
+    :font normal 13px/20px Arial, Helvetica, sans-serif
+    :color #888
+    :margin
+      :top 0
+      :bottom 0
+    a
+      :color #9E0C0F
+      :text-decoration none
+      &hover 
+        :text-decoration underline
