@@ -4,7 +4,7 @@
     .event{:class => "event_#{i}"}
       %h2= link_to event.title, event
       %p.time
-        l event.date, :format => :simple
+        =l event.date, :format => :simple
       %p.desc
         =event.description
       %p.loc
