@@ -16,7 +16,7 @@
 =sans
   :font-family Helvetica, Arial, sans-serif
 =uitype
-  :font-family Verdana, Tahoma, Geneva, Helvetica, Arial, sans-serif
+  :font-family Helvetica, Arial, sans-serif
 =bold
   :font-weight bold
 =normal
@@ -47,6 +47,9 @@ body
 
 a
   :color = !red
+.crud
+  +link_sans
+  +ultra_small_text
 #wrap
   +container
   :position absolute
@@ -329,7 +332,13 @@ flash success error notice
         :float left
         :width 70px
   #apps
-    +column(8)
+    +wrapper(8)
+    h2
+      +column(8)
+    ul
+      +wrapper(8)
+      li
+        +column(4)
 
 // Controller Action specific
 
@@ -507,9 +516,24 @@ flash success error notice
       :height 69px
   #apps
     +column(4)
+    ul
+      :list-style none
+    .app
+      p.name
+        :border-top 1px solid #BABABA
+        :margin-bottom 0
+        :line-height 20px
+        :padding-top 10px
     .crud
+      :margin-top 0
       +small_sans
+      +ultra_small_text
       +bold
+      :line-height 20px
+    .app_0
+      p.name
+        :border-top 0
+        :padding-top 0
   #projects
     +column(8)
     ul

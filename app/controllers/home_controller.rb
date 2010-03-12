@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @upcoming_event         = Event.next(1).first
-    @recent_presentations   = Presentation.ordered.limited 3
+    @recent_presentations   = Presentation.ordered.limited 2
     @recent_topics          = Topic.recent 6
     @recent_tweets          = Tweet.recent 3
     @recent_blogs           = Entry.recent 6

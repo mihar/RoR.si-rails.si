@@ -1,7 +1,8 @@
-.app
-  = link_to app, app.homepage_url
-  .crud
-    - restrict_to_owner(app) do
+%li.app{:class => "app app_#{app_counter}"}
+  %p.name
+    = link_to app, app.homepage_url
+  - restrict_to_owner(app) do
+    %p.crud
       = link_to "Uredi", edit_app_path(app)
       |
       = link_to "Odstrani", app, :method => :delete, :confirm => "Ste prepričani?"

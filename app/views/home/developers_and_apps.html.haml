@@ -4,7 +4,8 @@
   
 #apps
   %h2 Aplikacije
-  = render @apps
+  %ul
+    = render @apps
   %p.crud
     = link_to "Nova aplikacija", new_app_path
   
