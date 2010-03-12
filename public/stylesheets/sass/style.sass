@@ -213,22 +213,24 @@ flash success error notice
 
 #flash
   +column(12)
-  +prefix(4)
   
   div
+    :margin
+      :top 10px
+      :bottom 10px
     :padding
       :left = !gutter/2 + "px"
       :right = !gutter/2 + "px"
       :top = !gutter/4 + "px"
       :bottom = !gutter/4 + "px"
     :border
-      :width 1px
-      :style solid
+      :width 3px
+      :style double
       :color #CCC
   
   #flash_success
     :border-color = !green
-  #flash_error
+  #flash_failure
     :border-color = !red
   #flash_notice
     :border-color = !gray_lite

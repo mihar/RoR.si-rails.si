@@ -8,9 +8,9 @@
   %body{body_attrs}
     #wrap
       = render :partial => '/shared/header'
-      = partial 'shared/flashes'
       = partial 'shared/subnav'
       #content
+        = partial 'shared/flashes'
         = yield
       = partial 'shared/footer'
     = yield :javascripts
