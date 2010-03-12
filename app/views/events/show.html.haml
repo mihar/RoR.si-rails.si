@@ -1,13 +1,18 @@
 - content_for :javascripts do
   = event_map @event
 
-#show
-  .ribbon
-    .row
-      .crud
-        %p= link_to 'Uredi', edit_event_path(@event)
-        %p= link_to 'Kopiraj', copy_event_path(@event)
-      %h2= @event.title
-      = partial 'events/show_in_feed', :event => @event
+= title @event.title
+.details
+  %p.location
+    = @event.location
+  %p.date
+    = @event.date.to_s(:fancy_date_with_time)
 
-      #map
+  .description
+    = @event.cached_description_html
+
+.crud
+  %p= link_to 'Uredi', edit_event_path(@event)
+
+/
+  #map

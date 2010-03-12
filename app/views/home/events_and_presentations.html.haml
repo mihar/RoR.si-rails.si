@@ -1,18 +1,27 @@
 = title "Dogodki"
 #events
-  - @events.each do |event|
-    %h2= link_to event.title, event
-    %p.time
-      = event.date.to_s(:time)
-      on
-      = event.date.to_s(:fancy_date)
-    %p.desc
-      =event.description
-    %p.loc
-      =event.location
+  - @events.each_with_index do |event, i|
+    .event{:class => "event_#{i}"}
+      %h2= link_to event.title, event
+      %p.time
+        = event.date.to_s(:time)
+        on
+        = event.date.to_s(:fancy_date)
+      %p.desc
+        =event.description
+      %p.loc
+        =event.location
   %p.crud
     =link_to "Nov dogodek", new_event_path
 = title "Predavanja", true, "secondary"
 #presentations
   - @presentations.each do |presentation|
-    %h2= link_to presentation.title, presentation
+    .presentation
+      %h2
+        = link_to presentation.title, presentation
+      %p.speaker
+        == by #{presentation.speaker}
+      .description
+        = presentation.description_html
+  %p.crud
+    =link_to "Novo predavanje", new_presentation_path

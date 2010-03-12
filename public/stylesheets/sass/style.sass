@@ -168,7 +168,9 @@ a
     +column(4)
         
 
-body#home-events_and_presentations #wrap #subnav li.events_and_presentations a
+body#home-events_and_presentations #wrap #subnav li.events_and_presentations a,
+body.presentations #wrap #subnav li.events_and_presentations a,
+body.events #wrap #subnav li.events_and_presentations a
   +nav_active
   :color white
 body.topics #wrap #subnav li.topics a, body.posts #wrap #subnav li.topics a
@@ -235,13 +237,22 @@ flash success error notice
   .row
     +column(12)
     
-    
-  #events
-    +column(4)
   #presentations
-    +column(8)
+    +wrapper(8)
+    h2
+      +column(8)
     ul
       :list-style none
+      li
+        +column(4)
+        h3
+          +small_sans
+          +bold
+          :line-height 20px
+          :margin-bottom 0
+        p
+          :margin-top 0
+          +small_sans
   #topics
     +column(12)
     table
@@ -273,16 +284,19 @@ flash success error notice
           :margin-top 0
   #blogs
     +column(8)
+    ol, ul
+      :list-style none
   #twitter
     +column(4)
     +small_sans
     +ultra_small_text
-    ol
+    ol, ul
       :list-style none
       li
         :border-bottom 1px solid #BABABA
         p.tweet
           :margin-bottom 0
+          :line-height 20px
         p.author
           :margin-top 0
           :text-align right
@@ -297,7 +311,25 @@ flash success error notice
   #apps
     +column(8)
 
-// Controller specific
+// Controller Action specific
+
+#home-index
+  #presentations
+    h2
+      :margin-bottom 0
+  #events
+    +column(4)
+    h3
+      :margin-bottom 0
+      +small_sans
+      +bold
+      :line-height 20px
+    .time
+      +small_sans
+      :margin 0
+    .loc
+      +small_text
+      :margin 0
         
 #topics-index
   table
@@ -388,32 +420,58 @@ flash success error notice
 #home-events_and_presentations
   #events
     +wrapper(12)
-    h2
-      +column(12)
-      +first
-      +last
-      :border-bottom-style solid
-      :border-bottom-width 1px
-      :margin-bottom 4px
-    .time
-      +column(4)
-      :position absolute
-      +small_sans
-      :right 0
-      :line-height 40px
-    .desc
-      +column(8)
-      +first
-      :margin-top 3px
-    .loc
-      +column(4)
-      +last
-      :margin-top 3px
-      +small_text
+    .event
+      :position relative
+      +wrapper(12)
+      h2
+        :margin-bottom 0
+        :margin-top 0
+        :padding-top 10px
+        :line-height 30px
+        +column(12)
+        :border-top-style solid
+        :border-top-width 1px
+        :border-top-color #BABABA
+        :border-bottom none
+      .time
+        +column(4)
+        :position absolute
+        +small_sans
+        :right 0
+        :line-height 30px
+      .desc
+        +column(8)
+        :margin-top 0
+        +small_text
+      .loc
+        +column(4)
+        :margin-top 0
+        +small_text
+    .event_0
+      h2
+        :border-top none
     .crud
       +column(12)
   #presentations
     +wrapper(12)
+    .presentation
+      +wrapper(6)
+      h2
+        +column(6)
+        :margin-bottom 0
+        :border-bottom 0
+        :line-height 30px
+      p
+        :margin 0
+        +column(6)
+      .speaker
+        +small_sans
+        +bold
+      .description
+        p
+          +small_text
+    .crud
+      +column(12)
 
 #home-blogs_and_tweets
   h2
@@ -460,6 +518,48 @@ flash success error notice
             :vertical-align -15%
         .twu
           :padding-right 5px
+
+#presentations-show
+  .details
+    +wrapper(12)
+    .speaker
+      :margin-top 0
+      +column(4)
+      +small_sans
+    .location
+      :margin-top 0
+      +column(4)
+      +small_text
+    .date
+      :margin-top 0
+      +column(4)
+      +small_sans
+    .description
+      +column(12)
+      .link
+        +small_sans
+        +bold
+  .crud
+    +column(12)
+    +small_sans
+    +bold
+#events-show
+  .details
+    +wrapper(12)
+    .location
+      :margin-top 0
+      +column(8)
+      +small_text
+    .date
+      :margin-top 0
+      +column(4)
+      +small_sans
+    .description
+      +column(12)
+  .crud
+    +column(12)
+    +small_sans
+    +bold
   
 form
   .personals

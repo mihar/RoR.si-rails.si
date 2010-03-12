@@ -33,15 +33,20 @@
       - @recent_presentations.each do |presentation|
         %li
           %h3= link_to presentation.title, presentation
-          - unless parse_presenter(presentation).nil? || parse_presenter(presentation).empty?
-            %p== by #{parse_presenter(presentation)}
+          %p== by #{presentation.speaker}
   
   #events
     %h2= link_to "Dogodki", events_and_presentations_path(:anchor => "events")
     - if @upcoming_event
-      %p= link_to @upcoming_event.title, @upcoming_event
+      %h3= link_to @upcoming_event.title, @upcoming_event
+      %p.time 
+        = @upcoming_event.date.to_s(:time)
+        on
+        = @upcoming_event.date.to_s(:fancy_date)
+      %p.loc
+        = @upcoming_event.location
     - else
-      %p Trenutno ni napovedanih dogodkov.
+      %p.none Trenutno ni napovedanih dogodkov.
     
   #blogs
     %h2= link_to "Blogi", blogs_and_tweets_path(:anchor => "blogs")

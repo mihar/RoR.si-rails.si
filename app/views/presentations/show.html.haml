@@ -1,26 +1,19 @@
-#show
-  .ribbon
-    .row
-      .crud
-        %p= link_to 'Uredi', edit_presentation_url(@presentation)
-      %h2= link_to @presentation.title, @presentation.url
-      %ul.details
-        - unless parse_presenter(@presentation).nil? || parse_presenter(@presentation).empty?
-          %li.clearfix
-            .detail= parse_presenter(@presentation)
-            .label Kdo
-        - unless @presentation.location.nil? || @presentation.location.empty?
-          %li.clearfix
-            .detail= @presentation.location
-            .label Kje
-        - unless @presentation.date_of.nil?
-          %li.clearfix
-            .detail=@presentation.date_of.to_s(:fancy_date)
-            .label Kdaj
-        %li.clearfix.last
-          .detail= @presentation.description_html
-          .label Kaj
-        -#- unless @presentation.embed.nil? || @presentation.embed.empty?
-          -#%li.clearfix
-            -#.detail= @presentation.embed
-            -#.label Watch
+= title link_to(@presentation.title, @presentation.url)
+.details
+  %p.speaker
+    == by #{@presentation.speaker}
+  - unless @presentation.location.nil? || @presentation.location.empty?  
+    %p.location
+      = @presentation.location
+  - unless @presentation.date_of.nil?
+    %p.date
+      = @presentation.date_of.to_s(:fancy_date)
+  .description
+    = @presentation.description_html
+    %p.link= link_to "Povezava do predavanja", @presentation.url
+  -#- unless @presentation.embed.nil? || @presentation.embed.empty?
+    -#%li.clearfix
+      -#.detail= @presentation.embed
+      -#.label Watch
+.crud
+  %p= link_to 'Uredi', edit_presentation_url(@presentation)
