@@ -36,8 +36,7 @@ Rails::Initializer.run do |config|
     :source  => 'http://gems.github.com'
   config.gem "josevalim-inherited_resources",
     :lib     => "inherited_resources"
-  config.gem "dancroak-le-git",
-    :lib     => "le_git"
+  config.gem "le-git"
   config.gem 'taf2-curb', :lib => 'curb'
   config.gem "technicalpickles-feedra",
     :lib     => "feedra"
