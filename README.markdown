@@ -15,8 +15,15 @@ Design by Srđan Prodanović
 ## Dependencies
 
 We're using our own modified le-git gem, that has to be installed locally.
+Before you attempt the installation, please uninstall any of the following gems, if present:
+<pre>
+  sudo gem uninstall dancroak-le-git
+  sudo gem uninstall technicalpickles-le-git
+</pre>
 Clone the repo from my [github page](/mihar/le-git) and run:
 <pre>
+  git clone git://github.com/mihar/le-git.git
+  cd le-git
   rake build
   sudo gem install pkg/le-git-0.2.0.gem
 </pre>

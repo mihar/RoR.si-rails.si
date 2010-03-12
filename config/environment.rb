@@ -5,7 +5,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 require 'extensions/array' # needs to load before initializers
 
 Rails::Initializer.run do |config|
-  
+  config.i18n.default_locale = :sl
   
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
