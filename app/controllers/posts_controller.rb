@@ -20,7 +20,7 @@ class PostsController < InheritedResources::Base
   protected
   
   def collection
-    @posts ||= end_of_association_chain.paginate(:per_page => 20, :page => params[:page])
+    @posts ||= end_of_association_chain.paginate(:page => params[:page])
   end
   
 end

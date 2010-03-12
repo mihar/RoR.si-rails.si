@@ -1,4 +1,7 @@
 class Topic < ActiveRecord::Base
+  cattr_reader :per_page
+  @@per_page = 30
+  
   include Pacecar
   include Permalink
   
@@ -16,5 +19,18 @@ class Topic < ActiveRecord::Base
   
   def to_s
     title
+  end
+  
+  def anchor
+    "t#{id}"
+  end
+  
+  def page
+    count = Topic.count
+    if @@per_page and @@per_page < count
+      count / @@per_page
+    else
+      1
+    end
   end
 end
