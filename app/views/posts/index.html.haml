@@ -3,8 +3,7 @@
 - content_for :head do
   = stylesheet_link_tag "highlight"
   %script{:type => "text/javascript"}
-    / hljs.initHighlightingOnLoad();
-    / hljs.tabReplace = ''; // 4 spaces
+    hljs.initHighlightingOnLoad();
 
 %table
   - @posts.each_with_index do |post, i|
