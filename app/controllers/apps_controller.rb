@@ -7,11 +7,11 @@ class AppsController < InheritedResources::Base
   end
   
   def create
-    create! { developers_and_apps }
+    create! { developers_and_apps_path }
   end
 
   def destroy
-    destroy! { developers_and_apps }
+    destroy! { developers_and_apps_path }
   end
 
 end
