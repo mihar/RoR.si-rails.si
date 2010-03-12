@@ -5,6 +5,7 @@
     %tbody{:class => "topic_#{i}"}
       %tr
         %td.topicinfo
+          %a{:name => topic.anchor}
           %h3= link_to topic, topic_posts_path(topic)
         %td.postcount
           %p.posts= pluralize_posts topic.posts.count

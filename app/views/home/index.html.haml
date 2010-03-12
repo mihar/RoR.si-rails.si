@@ -13,7 +13,7 @@
         %tbody
           %tr
             %td.title
-              %h3= link_to topic.title, topic_posts_path(topic, :page => topic.page, :anchor => topic.anchor)
+              %h3= link_to topic.title, topic_posts_path(topic)
             %td.postcount
               %p= pluralize_posts topic.posts.count
           %tr

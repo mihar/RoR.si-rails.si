@@ -26,7 +26,7 @@ class TopicsController < InheritedResources::Base
   protected
   
   def collection
-    @topics ||= end_of_association_chain.paginate(:per_page => 30, :page => params[:page])
+    @topics ||= end_of_association_chain.paginate(:page => params[:page])
   end
   
 end
