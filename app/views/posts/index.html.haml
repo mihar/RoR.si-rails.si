@@ -9,11 +9,9 @@
             =post.user
         %td.timestamps
           %p
-            (
             = post.updated_at.to_s(:time)
             on
             = post.updated_at.to_s(:fancy_date)
-            )
         %td.crud
           %p
             = link_to 'Uredi', edit_topic_post_path(@topic, post)
