@@ -12,8 +12,7 @@
         - @events.each do |event|
           .quarter>
             %p.date
-              %span= event.date.to_s(:fancy_date)
-              %span= event.date.to_s(:time)
+              %span= l event.date, :format => :simple
             %h3= link_to h(event.title), event
             %p= truncate_html event.cached_description_html, :omission => "... #{link_to 'Beri dalje...', event}"
 

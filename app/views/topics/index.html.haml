@@ -11,9 +11,7 @@
       %tr
         %td.time_and_owner
           %p
-            = topic.created_at.to_s(:time)
-            on
-            = topic.created_at.to_s(:fancy_date)
+            = l topic.created_at, :format => :simple
             by
             - img = image_tag topic.user.gravatar_url(:size => 16)
             = link_to img + " " + topic.user.to_s, topic.user

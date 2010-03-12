@@ -3,9 +3,7 @@
   - @events.each do |event|
     %h2= link_to event.title, event
     %p.time
-      = event.date.to_s(:time)
-      on
-      = event.date.to_s(:fancy_date)
+      = l event.date, :format => :simple
     %p.desc
       =event.description
     %p.loc
