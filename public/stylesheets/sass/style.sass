@@ -237,10 +237,12 @@ flash success error notice
   
 #content
   +wrapper(12)
+  :position relative
   h1
     +column(12)
     :position absolute
-    :top 60px
+    :left 0
+    :top -60px
     +bold
     :border-bottom 3px double #BABABA
     +large_crisp_shadow
@@ -440,6 +442,7 @@ flash success error notice
     +wrapper(12)
     tr
       +wrapper(12)
+      :position relative
       .user
         +column(8)
         h2
@@ -453,7 +456,8 @@ flash success error notice
       .gravatar
         +column(2)
         :position absolute
-        :margin-top 10px
+        :left 0
+        :top 10px
       .body
         :margin-top -10px
         :border-bottom 1px solid #BABABA
