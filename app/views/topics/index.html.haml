@@ -1,11 +1,11 @@
 = title "Diskusije"
 
 %table
-  - @topics.each do |topic|
-    %tbody
+  - @topics.each_with_index do |topic, i|
+    %tbody{:class => "topic_#{i}"}
       %tr
         %td.topicinfo
-          %h2= link_to topic, topic_posts_path(topic)
+          %h3= link_to topic, topic_posts_path(topic)
         %td.postcount
           %p.posts= pluralize_posts topic.posts.count
       %tr
@@ -15,7 +15,8 @@
             on
             = topic.created_at.to_s(:fancy_date)
             by
-            = topic.user
+            - img = image_tag topic.user.gravatar_url(:size => 16)
+            = link_to img + " " + topic.user.to_s, topic.user
         %td.crud
           %p
             = link_to 'Uredi', edit_topic_path(topic)

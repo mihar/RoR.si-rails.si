@@ -296,24 +296,35 @@ flash success error notice
       +wrapper(12)
       .topicinfo
         +column(12)
-        h2
-          :border-bottom-style solid
-          :border-bottom-width 1px
-          :margin-bottom 4px
+        h3
+          :border-top 1px solid #BABABA
+          :border-bottom none
+          :margin-bottom 0
+          :padding-top 15px
+          :font-size 18px
+          :line-height 24px
       .postcount
         +column(4)
         :position absolute
         :right 0
-        :top 7px
+        :top 15px
       .time_and_owner
         +column(8)
         +small_sans
         p
           :margin-top 0
+          img
+            :vertical-align -15%
       .crud
         +column(4)
         p
           :margin-top 0
+    tbody.topic_0
+      h3
+        :border-top none
+        :padding-top 0
+      .postcount
+        :top 0
   .crud
     +column(12)
 #posts-index
@@ -407,7 +418,7 @@ flash success error notice
       :line-height 16px
       .img
         img
-          :vertical-align middle
+          :vertical-align -15%
       .twu
         :padding-right 5px
   
