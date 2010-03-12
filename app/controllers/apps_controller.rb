@@ -3,15 +3,15 @@ class AppsController < InheritedResources::Base
 
   def new
     @app = App.new :user => current_user
-    new! { root_url }
+    new! { developers_and_apps_path }
   end
   
   def create
-    create! { root_url }
+    create! { developers_and_apps }
   end
 
   def destroy
-    destroy! { root_url }
+    destroy! { developers_and_apps }
   end
 
 end

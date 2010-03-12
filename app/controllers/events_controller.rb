@@ -12,15 +12,15 @@ class EventsController < InheritedResources::Base
   
   def new
     @event = Event.new :user => current_user
-    new! { root_url }
+    new! { events_and_presentations_path }
   end
 
   def create
-    create! { root_url }
+    create! { events_and_presentations_path }
   end
 
   def destroy
-    destroy! { root_path }
+    destroy! { events_and_presentations_path }
   end
 
   def copy

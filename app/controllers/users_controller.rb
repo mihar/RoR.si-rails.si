@@ -1,5 +1,4 @@
 class UsersController < Clearance::UsersController
-
   before_filter :forbid_editing_user_other_than_current_user,
     :only => [:edit, :update]
   skip_before_filter :authenticate, :only => [:new, :create]

@@ -4,15 +4,15 @@ class PresentationsController < InheritedResources::Base
 
   def new
     @presentation = Presentation.new :user => current_user, :speaker => current_user
-    new! { root_url }
+    new! { events_and_presentations_path }
   end
 
   def create
-    create! { root_url }
+    create! { events_and_presentations_path }
   end
 
   def destroy
-    destroy! { root_url }
+    destroy! { events_and_presentations_path }
   end
   
   protected

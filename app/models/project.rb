@@ -3,7 +3,8 @@ class Project < ActiveRecord::Base
 
   belongs_to :user
 
-  named_scope :all, :order => 'name asc'
+  default_scope :order => 'name asc'
+  named_scope :recent, :order => "updated_at desc"
 
   validates_presence_of :name, :user_id
   validates_url_format_of :github_url, :message => "is invalid"
