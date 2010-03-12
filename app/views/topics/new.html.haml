@@ -12,7 +12,7 @@
       %p
         = post_form.hidden_field :user_id
         = post_form.label :body, "Besedilo"
-      %p
+      %p.body_input
         = post_form.text_area :body
       %p.instruct
         == Oblikuj besedilo z #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
