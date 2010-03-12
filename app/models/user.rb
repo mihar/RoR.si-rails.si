@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_one  :feed, :as => :feed_owner, :dependent => :destroy
   belongs_to :company
   
+  named_scope :with_github, :conditions => "github IS NOT NULL and github != ''"
+  named_scope :with_twitter, :conditions => "twitter IS NOT NULL and twitter != ''"
+  
   accepts_nested_attributes_for :feed,
     :reject_if => proc { |attrs| attrs.nil? ||
                                  attrs.all? { |key, value| value.blank? } }

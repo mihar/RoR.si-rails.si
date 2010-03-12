@@ -1,7 +1,7 @@
 module Cron
   def self.get_tweets
     client = TwitterSearch::Client.new
-    users  = User.twitter_present
+    users  = User.with_twitter
     users.each do |user|
       tweets = client.query "from:#{user.twitter}"
       tweets.each do |tweet|
@@ -15,7 +15,7 @@ module Cron
   end
 
   def self.get_projects
-    User.github_present.each do |user|
+    User.with_github.each do |user|
       Github::User.find(user.github).repositories.each do |repo|
         unless repo.fork
           project = Project.find_or_initialize_by_name(repo.name)
