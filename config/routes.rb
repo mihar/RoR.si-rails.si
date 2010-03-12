@@ -20,9 +20,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
-  map.events_and_presentations 'dogodki_in_predavanja', :controller => "home", :action => "events_and_presentations"
-  map.blogs_and_tweets 'blogi_in_tweeti', :controller => "home", :action => "blogs_and_tweets"
-  map.developers_and_apps 'razvijalci_in_aplikacije', :controller => "home", :action => "developers_and_apps"
+  map.events_and_presentations 'dogodki-in-predavanja', :controller => "home", :action => "events_and_presentations"
+  map.blogs_and_tweets 'blogi-in-tweeti', :controller => "home", :action => "blogs_and_tweets"
+  map.developers_and_apps 'razvijalci-in-aplikacije', :controller => "home", :action => "developers_and_apps"
 
   map.root :controller => 'home', :action => 'index'
 
