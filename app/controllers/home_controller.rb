@@ -25,6 +25,7 @@ class HomeController < ApplicationController
   def developers_and_apps
     @users                  = User.ordered("updated_at desc")
     @apps                   = App.all
+    @projects               = Project.all
   end
 
 end

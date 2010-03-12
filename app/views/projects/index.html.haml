@@ -1,4 +1,5 @@
-%h2 Projekti
+= title "Projekti"
+
 - collection.each do |project|
   %div[project]
     %h3
@@ -10,4 +11,5 @@
         ~ project.description
       - else
         Brez opisa
+        
 = will_paginate collection

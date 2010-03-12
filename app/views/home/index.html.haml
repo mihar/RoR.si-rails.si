@@ -23,9 +23,7 @@
                 = topic.user
             %td.infos
               %p
-                = topic.created_at.to_s(:time)
-                on
-                = topic.created_at.to_s(:fancy_date)
+                = l topic.created_at, :format => :simple
 
   #presentations
     %h2= link_to 'Predavanja', events_and_presentations_path(:anchor => "presentations")
