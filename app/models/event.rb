@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   include Pacecar
+  include Permalink
 
   validates_presence_of :date, :title, :location
 

@@ -1,4 +1,5 @@
 class Presentation < ActiveRecord::Base
+  include Permalink
   has_markup :description, :cache_html => true
   belongs_to :user
 
