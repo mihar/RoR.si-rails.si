@@ -1,6 +1,11 @@
 class PresentationsController < InheritedResources::Base
   actions :new, :create, :edit, :update, :destroy, :show, :index
 
+  def new
+    @presentation = Presentation.new :user => current_user, :speaker => current_user
+    new! { root_url }
+  end
+
   def create
     create! { root_url }
   end

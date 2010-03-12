@@ -1,40 +1,39 @@
 - form_for @presentation do |form|
-  %p
-    = form.label :title, "Naziv"
-  %p
-    = form.text_field :title
+  .personals
+    %p
+      = form.label :title, "Naslov"
+    %p
+      = form.text_field :title
 
-  %p
-    = form.label :user_id, "Uporabnik"
-  %p
-    = form.collection_select :user_id, User.all, :id, :to_s
+    %p
+      = form.label :speaker, "Predavatelj"
+    %p
+      = form.text_field :speaker
 
-  %p
-    = form.label :other_speakers, "Ostali predavatelji"
-  %p
-    = form.text_field :other_speakers
+    %p
+      = form.label :url, "Povezava <span class='instruct'>PDF / PPT / Slideshare</span>"
+    %p
+      = form.text_field :url
 
-  %p
-    = form.label :url
-  %p
-    = form.text_field :url
+    %p
+      = form.label :location, "Lokacija"
+    %p
+      = form.text_field :location
 
-  %p
-    = form.label :location, "Lokacija"
-  %p
-    = form.text_field :location
+    %p
+      = form.label :date_of, "Datum"
+    %p
+      = form.date_select :date_of
+  .elsewheres
+    %p
+      = form.label :description, "Opis"
+    %p
+      = form.text_area :description
+    %p.instruct
+      == Format description using #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
 
-  %p
-    = form.label :date_of, "Datum"
-  %p
-    = form.date_select :date_of
-
-  %p
-    = form.label :description, "Opis"
-  %p
-    = form.text_area :description
-  %p.instruct
-    == Format description using #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
+    %p
+      = form.hidden_field :user_id
 
   .buttons
     %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
