@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100312111007) do
+ActiveRecord::Schema.define(:version => 20100312142605) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20100312111007) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
+    t.integer  "user_id"
   end
 
   create_table "companies", :force => true do |t|
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20100312111007) do
     t.text     "summary"
     t.text     "cached_summary_html",     :limit => 255
     t.string   "permalink"
+    t.integer  "user_id"
   end
 
   create_table "feed_errors", :force => true do |t|

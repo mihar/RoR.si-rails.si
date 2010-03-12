@@ -1,9 +1,4 @@
-%h2 Uredi aplikacijo
+= title "Uredi aplikacijo"
+= render "form"
 
-= error_messages_for :app
-
-- form_for(@app) do |form|
-  = partial 'apps/form', :form => form
-    
-  %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
-  %p= link_to 'Odstrani', app_path(@app), :method => :delete, :confirm => 'Ste prepričani?'
+.crud= link_to 'Odstrani', app_path(@app), :method => :delete, :confirm => 'Ste prepričani?'

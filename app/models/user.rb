@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :projects
   has_many :topics
   has_many :posts
+  has_many :apps
+  has_many :events
   has_one  :feed, :as => :feed_owner, :dependent => :destroy
   belongs_to :company
   

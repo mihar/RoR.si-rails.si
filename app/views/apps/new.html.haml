@@ -1,11 +1,2 @@
-#apps
-  .ribbon
-    .row
-      %h2 Nova aplikacija
-      = error_messages_for :app
-
-      - form_for(@app) do |form|
-        .fieldset
-          = partial 'apps/form', :form => form
-        .buttons
-          = form.submit 'Create', :disable_with => 'Prosimo počakajte...'
+= title "Nova aplikacija"
+= render "form"

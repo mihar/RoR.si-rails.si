@@ -1,7 +1,14 @@
-%div
-  = form.label :name, "Ime"
-  %div= form.text_field :name
+= error_messages_for :app
 
-%div
-  = form.label :homepage_url, "URL domače strani"
-  %div= form.text_field :homepage_url
+- form_for @app do |form|
+  %p
+    = form.label :name, "Ime"
+  %p
+    = form.text_field :name
+
+  %p
+    = form.label :homepage_url, "URL domače strani"
+  %p
+    = form.text_field :homepage_url
+    
+  .buttons= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
