@@ -2,7 +2,7 @@ class Topic < ActiveRecord::Base
   include Pacecar
   include Permalink
   
-  has_many :posts
+  has_many :posts, :order => "posts.created_at asc"
   belongs_to :user
   
   accepts_nested_attributes_for :posts

@@ -28,6 +28,15 @@
 =mid_text
   :font-size 16px
 
+=crisp_shadow
+  :text-shadow 0px 1px 1px #f5ffe0
+=large_crisp_shadow
+  :text-shadow 1px 2px 1px #f5ffe0
+=mid_shadow
+  :text-shadow 0px 1px 1px #BABABA
+=dark_shadow
+  :text-shadow 0px 1px 1px #454545
+
 =link_sans
   +small_text
   +bold
@@ -50,6 +59,7 @@ a
 .crud
   +link_sans
   +ultra_small_text
+  +crisp_shadow
 #wrap
   +container
   :position absolute
@@ -72,7 +82,7 @@ a
         :line-height 35px
         :color white
         +link_sans
-        :text-shadow 0px 1px 1px #454545
+        +dark_shadow
         :border-top = "3px solid" + !red_lite
         :padding-top 6px
         :padding-bottom 13px
@@ -104,7 +114,9 @@ a
     li
       +link_sans
       +ultra_small_text
-      :text-shadow 0px 1px 2px #BABABA
+      +crisp_shadow
+      a:hover
+        :color = !gray_dark
     li.link_img
       :position absolute
       :left 0px
@@ -135,11 +147,11 @@ a
 
 =nav_inactive
   :color = !red
-  :text-shadow 1px 1px 1px #f5ffe0
+  +crisp_shadow
 =nav_active
   :color = !green
   :background = !red
-  :text-shadow 1px 1px 1px #454545
+  +dark_shadow
 
 #sidebar
   +wrapper(4)
@@ -151,8 +163,8 @@ a
     :-moz-border-radius 7px
     :-webkit-border-radius 7px
     :padding
-      :top = !gutter/8 + "px"
-      :bottom = !gutter/8 + "px"
+      :top = !gutter/4 + "px"
+      :bottom = !gutter/4 + "px"
     
     li
       :border-top
@@ -165,7 +177,8 @@ a
         :display block
         :padding-left = !gutter/2 + "px"
         :font-size 18px
-        :line-height 40px
+        :line-height 36px
+        +link_sans
         +nav_inactive
         &:hover
           +nav_active
@@ -227,16 +240,19 @@ flash success error notice
     :top 60px
     +bold
     :border-bottom 3px double #BABABA
-    :text-shadow 1px 2px 1px #f5ffe0
+    +large_crisp_shadow
   h1.secondary
     :position static
     :top inherit
   h2
     :border-bottom 3px double #BABABA
+    +mid_shadow
     a
       :color = !gray_dark
       &:hover
         :color = !red
+  h3
+    +crisp_shadow
   form
     +column(12)
   .row
@@ -407,6 +423,9 @@ flash success error notice
       +wrapper(12)
       .user
         +column(4)
+        h2
+          :border-bottom 0
+          :line-height 25px
       .timestamps, .crud
         +small_sans
         +column(4)

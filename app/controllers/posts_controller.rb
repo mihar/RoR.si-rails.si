@@ -20,7 +20,7 @@ class PostsController < InheritedResources::Base
   protected
   
   def collection
-    @posts ||= end_of_association_chain.by_created_at(:desc).paginate(:page => params[:page])
+    @posts ||= end_of_association_chain.paginate(:page => params[:page])
   end
   
 end

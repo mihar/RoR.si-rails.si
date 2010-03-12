@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :tweets
   has_many :projects
   has_many :topics
-  has_many :posts
+  has_many :posts, :order => "posts.created_at desc"
   has_many :apps
   has_many :events
   has_one  :feed, :as => :feed_owner, :dependent => :destroy

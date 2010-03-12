@@ -20,7 +20,7 @@
 #topics
   %h2 Diskusije
   %ol#posts
-    - @user.posts.ordered(:topic_id, :created_at).limited(5).each_with_index do |post, i|
+    - @user.posts.limited(5).each_with_index do |post, i|
       %li{:class => "post post_#{i}"}
         - topic = Topic.first(post.topic_id)
         %h3= link_to topic.title, topic_posts_path(topic)
