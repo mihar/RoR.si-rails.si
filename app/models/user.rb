@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :topics
   has_many :posts
   has_one  :feed, :as => :feed_owner, :dependent => :destroy
-  belongs_to :company  
+  belongs_to :company
   
   accepts_nested_attributes_for :feed,
     :reject_if => proc { |attrs| attrs.nil? ||
@@ -49,6 +49,22 @@ class User < ActiveRecord::Base
   
   def github_url
     "http://github.com/#{github}" if github?
+  end
+  
+  def owns_post?(post)
+    posts.include? post
+  end
+  
+  def owns_project?(project)
+    projects.include? project
+  end
+  
+  def owns_presentation?(presentation)
+    presentations.include? presentation    
+  end
+  
+  def owns_topic?(topic)
+    topics.include? topic
   end
 
   private
