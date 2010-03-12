@@ -1,4 +1,4 @@
-%li{:class => "entry #{dom_id(entry)}"}
+%li{:class => "entry entry_#{entry_counter}"}
   %h3= link_to entry.title, entry.normalized_url
   .img= link_to image_tag(entry.feed.feed_owner.gravatar_url(:size => 45)), entry.feed.feed_owner
   .author= link_to entry.feed.feed_owner, entry.feed.feed_owner

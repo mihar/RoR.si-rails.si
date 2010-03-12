@@ -496,6 +496,39 @@ flash success error notice
     .crud
       +column(12)
 
+#home-developers_and_apps
+  #developers
+    :padding-top 10px
+    +column(12)
+    a
+      :display inline
+      :float left
+      :width 69px
+      :height 69px
+  #apps
+    +column(4)
+    .crud
+      +small_sans
+      +bold
+  #projects
+    +column(8)
+    ul
+      :list-style none
+      li
+        h3
+          :border-top 1px solid #BABABA
+          :margin-bottom 0
+          :line-height 30px
+          :padding-top 7px
+        p
+          :margin-top 0
+          +small_text
+      li.project_0
+        h3
+          :border-top 0
+          :padding-top 0
+          :margin-top -2px
+
 #home-blogs_and_tweets
   h2
     :position absolute
@@ -626,7 +659,7 @@ flash success error notice
         :padding-top 2px
       .img
         :top 50px
-    .entry_1
+    .entry_0
       h3
         :padding-top 0
         :border-top none

@@ -1,15 +1,17 @@
-= title "Razvijalci in aplikacije", false
-
+= title "Razvijalci"
 #developers
-  %h2 Razvijalci
-  = render @users
+  = render :partial => 'users/image_with_link', :collection => @users, :locals => {:size => 69}
   
 #apps
   %h2 Aplikacije
   = render @apps
+  %p.crud
+    = link_to "Nova aplikacija", new_app_path
   
 #projects
   %h2 Projekti
   %ul= render @projects
   
-.crud= link_to "Nova aplikacija", new_app_path
+
+
+= title "Razvijalci in aplikacije", false
