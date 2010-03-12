@@ -696,12 +696,11 @@ flash success error notice
     +bold
 
 #users-show
-  #content
-    :padding-top 20px
-  h1
   .avatar
     +column(4)
+    :padding-top 9px
   .moreinfo
+    :padding-top 9px
     +wrapper(8)
     .about
       +column(8)
@@ -769,8 +768,42 @@ flash success error notice
         :border-top none
       .img
         :top 40px
-
+        
+#users-show #wrap #content .blogs_only
+  +column(12)
+#users-show #wrap #content .tweets_only
+  +wrapper(12)
+  h2
+    +column(12)
+  :margin
+    :left 0
+    :right 0
+  li
+    +column(4)
+    :height 120px
+#errorExplanation
+  +column(12)
+  :width = (!column * 12) + (!gutter * 10) - (!gutter / 5) + "px"
+  :border = 3px double !red
+  :padding
+    :left = !gutter/2 + "px"
+    :right = !gutter/2 + "px"
+    :top = !gutter/4 + "px"
+    :bottom = !gutter/4 + "px"
+  h2
+    :width auto
+    :margin 0
+    :border-bottom 0
+  p
+    +small_sans
+  li
+    :margin-left = !gutter/1.5 + "px"
 form
+  .fieldWithErrors
+    label
+      :color = !red
+    input
+      :border = 1px solid !red
   .personals
     +column(6)
     +first

@@ -15,7 +15,7 @@ class UsersController < Clearance::UsersController
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Account updated."
-      redirect_to root_path
+      redirect_to current_user
     else
       render :action => :edit
     end
