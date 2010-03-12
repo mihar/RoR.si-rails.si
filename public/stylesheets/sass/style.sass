@@ -426,14 +426,11 @@ flash success error notice
         h2
           :border-bottom 0
           :line-height 25px
-      .timestamps, .crud
+      .timestamps
         +small_sans
-        +column(4)
-      .crud
-        +ultra_small_text
-        +uitype        
-        +bold
-        :text-align center
+        +column(8)
+        :line-height 25px
+        :text-align right
       .gravatar
         +column(2)
         :position absolute
@@ -446,6 +443,14 @@ flash success error notice
         +column(10)
         +prepend(2)
         +small_sans
+        .crud
+          :margin-top 0
+          +ultra_small_text
+          +uitype        
+          +bold
+          +wrapper(4)
+          :margin-left 0
+          :margin-right 0
         code
           :overflow auto
           :max-height 500px

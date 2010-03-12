@@ -15,19 +15,18 @@
             =post.user
         %td.timestamps
           %p
-            = l post.updated_at, :format => :simple
-        %td.crud
-          - restrict_to_owner(post) do
-            %p
-              = link_to 'Uredi', edit_topic_post_path(@topic, post)
-              |
-              = link_to 'Odstrani', [@topic, post], :confirm => 'Ste prepričani?', :method => :delete
+            = l post.updated_at, :format => :simple          
       %tr.second
         %td.gravatar
           - img = image_tag(post.user.gravatar_url(:size => 90))
           = link_to img, post.user
         %td.body{:colspan => 3}
           = post.cached_body_html
+          - restrict_to_owner(post) do
+            %p.crud
+              = link_to 'Uredi', edit_topic_post_path(@topic, post)
+              |
+              = link_to 'Odstrani', [@topic, post], :confirm => 'Ste prepričani?', :method => :delete
           
 .pagination= will_paginate @posts
 
