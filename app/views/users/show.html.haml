@@ -30,7 +30,7 @@
           %h3= link_to post.topic, topic_posts_path(post.topic, :anchor => post.anchor, :page => post.page)
           %p.trunc= truncate(strip_tags(post.cached_body_html), 200)
           %p.date=l post.created_at, :format => :simple
-- if @user.feed && user.feed.entries.size > 0
+- if @user.feed && @user.feed.entries.size > 0
   - if @user.tweets.size > 0    
     #blogs
       %h2 Blogi
