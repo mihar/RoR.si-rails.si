@@ -2,6 +2,8 @@
 - form_for [@topic, @post] do |form|
   %fieldset
     %div= form.text_area :body
+    %p.instruct
+      == Oblikuj besedilo z #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
       
     .buttons
       %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'

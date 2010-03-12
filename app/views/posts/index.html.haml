@@ -1,4 +1,9 @@
 = title @topic
+- javascripts "highlight.pack"
+- content_for :head do
+  = stylesheet_link_tag "sunburst"
+  %script{:type => "text/javascript"}
+    hljs.initHighlightingOnLoad();
 
 %table
   - @posts.each_with_index do |post, i|
@@ -22,7 +27,7 @@
           - img = image_tag(post.user.gravatar_url(:size => 90))
           = link_to img, post.user
         %td.body{:colspan => 3}
-          %p
+          .body
             = post.cached_body_html
 
 %p.crud

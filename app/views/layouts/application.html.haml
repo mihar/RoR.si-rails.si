@@ -3,6 +3,8 @@
   %head
     %title= yield :title
     = stylesheet_link_tag 'style', :media => 'screen'
+    = javascript_include_tag :defaults, :cache => true
+    = yield :head
   %body{body_attrs}
     #wrap
       = render :partial => '/shared/header'

@@ -1,4 +1,10 @@
-module LayoutHelper
+module LayoutHelper  
+  def javascripts(*args)
+    content_for(:head) do
+     javascript_include_tag(*args)
+    end
+  end
+  
   def body_attrs
     classes = [controller.controller_name]
     { :class => classes.join(" "), :id => "#{controller.controller_name}-#{controller.action_name}" }
