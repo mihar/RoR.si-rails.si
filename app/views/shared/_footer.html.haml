@@ -6,12 +6,11 @@
     %a{ :href => "http://facebook.com/Some1Else", :title => "Srđan Prodanović, Artiqulate" }
       Srđan Prodanović
     in 
-    %a{ :href => "http://majx.org/", :title => "Miha Rebernik, Majx" } Miha Rebernik
-    \.
+    == #{link_to("Miha Rebernik", "http://majx.org/", :title => "Miha Rebernik, Majx")}.
   %p
     Rails je razvil
-    %a{ :href => "http://www.loudthinking.com/about.html" }< David Heinemeier Hansson
-    , nadgrajujejo pa ga člani
+    == #{link_to("David Heinemeier Hansson", "http://www.loudthinking.com/about.html")},
+    nadgrajujejo pa ga člani
     %a{ :href => "http://groups.google.com/group/rubyonrails-core" }
       Rails core
     skupine.
