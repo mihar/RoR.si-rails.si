@@ -38,7 +38,10 @@
   
   #events
     %h2= link_to "Dogodki", events_and_presentations_path(:anchor => "events")
-    %p= link_to @upcoming_event.title, @upcoming_event
+    - if @upcoming_event
+      %p= link_to @upcoming_event.title, @upcoming_event
+    - else
+      %p Trenutno ni napovedanih dogodkov.
     
   #blogs
     %h2= link_to "Blogi", blogs_and_tweets_path(:anchor => "blogs")
