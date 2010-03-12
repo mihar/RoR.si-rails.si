@@ -1,5 +1,5 @@
-%li
+%li{:class => "entry #{dom_id(entry)}"}
   %h3= link_to entry.title, entry.normalized_url
-  .img= image_tag entry.feed.feed_owner.gravatar_url(:size => 45) 
+  .img= link_to image_tag(entry.feed.feed_owner.gravatar_url(:size => 45)), entry.feed.feed_owner
   .author= link_to entry.feed.feed_owner, entry.feed.feed_owner
   .summary= entry.short_summary

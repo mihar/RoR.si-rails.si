@@ -1,17 +1,34 @@
 = title @user
-.avatar= image_tag @user.gravatar_url(:size => 128)
+.avatar= image_tag @user.gravatar_url(:size => 210)
 
-.about= @user.about
+.moreinfo
+  .about= @user.about
+  %dl
+    - if @user.homepage?
+      %dt.homepage Domača stran:
+      %dd.homepage= link_to_self @user.homepage
+    - if @user.linkedin?
+      %dt.linkedin Linked in:
+      %dd.linkedin= link_to_self @user.linkedin
+    - if @user.twitter?
+      %dt.twitter Twitter:
+      %dd.twitter= link_to_twitter @user.twitter
+    - if @user.github?
+      %dt.github Github:
+      %dd.github= link_to_github @user.github
 
-- if @user.homepage?
-  .homepage= link_to_self @user.homepage
-- if @user.linkedin?
-  .linkedin= link_to_self @user.linkedin
-- if @user.twitter?
-  .twitter= link_to_twitter @user.twitter
-- if @user.github?
-  .github= link_to_github @user.github
-  
-%ol#tweets= render @user.tweets
-%ol#entries= render @user.feed.entries
-%ol#posts= render @user.posts
+#topics
+  %h2 Diskusije
+  %ol#posts
+    - @user.posts.ordered(:topic_id, :created_at).limited(5).each_with_index do |post, i|
+      %li{:class => "post post_#{i}"}
+        - topic = Topic.first(post.topic_id)
+        %h3= link_to topic.title, topic_posts_path(topic)
+        %p.trunc= truncate(strip_tags(post.cached_body_html), 200)
+        %p.date=l post.created_at, :format => :simple
+#blogs
+  %h2 Blogi
+  %ol#entries= render @user.feed.entries
+#twitter
+  %h2 Tweeti
+  %ol#tweets= render @user.tweets

@@ -66,5 +66,5 @@
 
   #people
     %h2= link_to "Razvijalci", developers_and_apps_path(:anchor => "developers")
-    = render :partial => 'users/image_with_link', :collection => @users
+    = render :partial => 'users/image_with_link', :collection => @users, :locals => {:size => 70}
       

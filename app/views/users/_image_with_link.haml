@@ -1,2 +1,5 @@
 - user = image_with_link
-= link_to image_tag(user.gravatar_url), user
+- if size.nil?
+  = link_to image_tag(user.gravatar_url), user
+- else
+  = link_to image_tag(user.gravatar_url({:size => size})), user

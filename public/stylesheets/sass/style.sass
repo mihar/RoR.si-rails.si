@@ -105,14 +105,14 @@ a
     li.link_img
       :position absolute
       :left 0px
-      :top -5px
+      :top 0px
       a
         :border 0
         :display block
         img
           :display block
     li.link_0
-      :padding-left 58px
+      :padding-left 56px
       :padding-right 25px
       +column(1)
       +first
@@ -285,7 +285,17 @@ flash success error notice
   #blogs
     +column(8)
     ol, ul
+      :position relative
       :list-style none
+      .img
+        :position absolute
+        :right 0
+        :margin-top -36px
+      .author
+        :margin-top -10px
+        a
+          :color = !gray_dark
+          +small_text
   #twitter
     +column(4)
     +small_sans
@@ -483,20 +493,9 @@ flash success error notice
       +first
       +last
     ol
-      :position relative
-      :list-style none
-      .img
-        :position absolute
-        :right 0
-        :margin-top -36px
       h3
         :margin-bottom 0
         :padding-right 50px
-      .author
-        :margin-top -10px
-        a
-          :color = !gray_dark
-          +small_text
       .summary
         :border-bottom 1px solid #BABABA
         :padding-bottom 20px
@@ -560,7 +559,67 @@ flash success error notice
     +column(12)
     +small_sans
     +bold
-  
+
+#users-show
+  h1
+    :margin-bottom 30px
+  .avatar
+    +column(4)
+  .moreinfo
+    +wrapper(8)
+    .about
+      +column(8)
+    dl
+      +wrapper(8)
+      dt
+        +column(2)
+      dd
+        +column(6)
+  #posts
+    :list-style none
+    .post
+      :position relative
+      h3
+        +small_sans
+        +bold
+        :line-height 30px
+        :margin-bottom 0
+        :border-top 1px solid #BABABA
+      .trunc
+        +small_text
+        :margin-top 0
+        :line-height 20px
+      .date
+        :position absolute
+        :right 0
+        :top -10px
+        +small_sans
+        :line-height 30px
+    .post_0
+      h3
+        :border-top 0
+  #blogs
+    h2
+      :margin-bottom 0
+    .entry
+      :position relative
+      h3
+        :border-top 1px solid #BABABA
+        :line-height 30px
+        :padding-top 10px
+        :margin-bottom 0
+      .author
+        :line-height 30px
+        :padding-top 2px
+      .img
+        :top 50px
+    .entry_1
+      h3
+        :padding-top 0
+        :border-top none
+      .img
+        :top 40px
+
 form
   .personals
     +column(6)
