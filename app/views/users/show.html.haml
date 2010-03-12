@@ -22,8 +22,7 @@
   %ol#posts
     - @user.posts.limited(5).each_with_index do |post, i|
       %li{:class => "post post_#{i}"}
-        - topic = Topic.first(post.topic_id)
-        %h3= link_to topic, topic_posts_path(topic, :anchor => post.anchor)
+        %h3= link_to post.topic, topic_posts_path(post.topic, :anchor => post.anchor)
         %p.trunc= truncate(strip_tags(post.cached_body_html), 200)
         %p.date=l post.created_at, :format => :simple
 #blogs

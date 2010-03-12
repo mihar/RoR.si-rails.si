@@ -8,9 +8,9 @@
 %table
   - @posts.each_with_index do |post, i|
     %tbody{:class => "post_#{i}"}
-      %a{:name => post.anchor}
       %tr.first
         %td.user
+          %a{:name => post.anchor}
           %h2
             =post.user
         %td.timestamps
