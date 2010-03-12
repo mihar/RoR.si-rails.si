@@ -19,8 +19,11 @@
     %h1= link_to rails_si_head, root_path
   %ul.authentication
     - if current_user
-      - img = image_tag current_user.gravatar_url(:size => 35)    	
+      - img = image_tag current_user.gravatar_url(:size => 35)
+      - session_class = "link "
       %li.link_img
         = link_to img, current_user
+    - else
+      - session_class = "link logged_out"
     - authentication_links.each_with_index do |link, i|
-      %li{:class => "link_" + i.to_s}= link
+      %li{:class => "#{session_class} link_" + i.to_s}= link
