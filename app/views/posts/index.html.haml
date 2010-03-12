@@ -27,8 +27,7 @@
           - img = image_tag(post.user.gravatar_url(:size => 90))
           = link_to img, post.user
         %td.body{:colspan => 3}
-          .body
-            = post.cached_body_html
+          = post.cached_body_html
 
 %p.crud
   = link_to 'Novo sporočilo', new_topic_post_path
