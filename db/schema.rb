@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(:version => 20100312002140) do
     t.string   "title"
     t.datetime "deleted_at"
     t.integer  "place_id"
-    t.text     "cached_description_html", :limit => 255
-    t.boolean  "recurring",                              :default => true, :null => false
+    t.text     "cached_description_html"
+    t.boolean  "recurring",               :default => true, :null => false
     t.text     "summary"
-    t.text     "cached_summary_html",     :limit => 255
+    t.text     "cached_summary_html"
     t.string   "permalink"
   end
 
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(:version => 20100312002140) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
-    t.text     "cached_description_html", :limit => 255
+    t.text     "cached_description_html"
     t.string   "permalink"
   end
 
@@ -113,9 +113,9 @@ ActiveRecord::Schema.define(:version => 20100312002140) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
-    t.text     "description",             :limit => 255
+    t.text     "description"
     t.integer  "user_id"
-    t.string   "other_speakers",                         :default => ""
+    t.string   "other_speakers",          :default => ""
     t.string   "location"
     t.text     "cached_description_html"
     t.datetime "date_of"

@@ -7,9 +7,6 @@ require 'extensions/array' # needs to load before initializers
 Rails::VendorGemSourceIndex.silence_spec_warnings = true
 
 Rails::Initializer.run do |config|
-  config.load_paths += Dir["#{RAILS_ROOT}/vendor/gems/**"].map do |dir| 
-    File.directory?(lib = "#{dir}/lib") ? lib : dir
-  end
 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
@@ -54,4 +51,4 @@ Rails::Initializer.run do |config|
     :source => 'http://gemcutter.org'
 end
 
-DO_NOT_REPLY = "team@rails.si"
+DO_NOT_REPLY = "Miha Rebernik <team@rails.si>"

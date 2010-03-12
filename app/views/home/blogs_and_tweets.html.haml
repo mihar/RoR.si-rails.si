@@ -1,6 +1,6 @@
 #blogs
   %h2 Blogi
-  %ul
+  %ol
     - @blogs.each do |blog|
       %li
         %h3= link_to blog.title, blog.normalized_url
@@ -9,7 +9,7 @@
         .summary= blog.short_summary
 #twitter
   %h2 Tweeti
-  %ul
+  %ol
     - @tweets.each do |tweet|
       %li
         %p.tweet= tweet_format(tweet.text)

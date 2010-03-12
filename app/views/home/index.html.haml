@@ -54,7 +54,13 @@
     %h2= link_to "Tweeti", blogs_and_tweets_path(:anchor => "blogs")
     %ul
       - @recent_tweets.each do |tweet|
-        %li= link_to_tweet(tweet)    
+        %li
+          %p.tweet= tweet_format(tweet.text)
+          %p.author
+            - img = image_tag(tweet.user.gravatar_url(:size => 16))
+            - twu = tweet.user.twitter
+            = link_to twu, "http://twitter.com/#{twu}", {:class => "twu"}
+            = link_to img, user_path(tweet.user), {:class => "img"}
 
   #apps
     %h2= link_to "Aplikacije", developers_and_apps_path(:anchor => "apps")

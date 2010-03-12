@@ -95,9 +95,9 @@ a
     :top -10px
     :left 50%
     :margin-left = 4 * !column + 4.5 * !gutter + "px"
-    :padding-top 7px
+    :padding-top 5px
     :height 40px
-    :background url(/images/loginbobonu.gif) no-repeat
+    :background url(/images/loginbobo.gif) no-repeat
     :list-style none
     li
       +link_sans
@@ -112,7 +112,7 @@ a
         img
           :display block
     li.link_0
-      :padding-left 56px
+      :padding-left 58px
       :padding-right 25px
       +column(1)
       +first
@@ -277,10 +277,21 @@ flash success error notice
     +column(4)
     +small_sans
     +ultra_small_text
-    ul
+    ol
       :list-style none
       li
-        :border-bottom 1px solid #CCC
+        :border-bottom 1px solid #BABABA
+        p.tweet
+          :margin-bottom 0
+        p.author
+          :margin-top 0
+          :text-align right
+          :line-height 16px
+          .img
+            img
+              :vertical-align -15%
+          .twu
+            :padding-right 5px
   #people
     +column(4)
   #apps
@@ -399,7 +410,7 @@ flash success error notice
   #presentations
     +wrapper(12)
 
-#home-blogs_and_tweets
+#home-blogs_and_tweets 
   h2
     :position absolute
     :margin-top -50px
@@ -408,19 +419,26 @@ flash success error notice
       +column(8)
       +first
       +last
+    ol
+      :list-style none
   #twitter
     h2
       +column(4)
       +first
       +last
-    p.author
-      :text-align right
-      :line-height 16px
-      .img
-        img
-          :vertical-align -15%
-      .twu
-        :padding-right 5px
+    ol
+      :list-style none
+      p.tweet
+        :margin-bottom 0
+      p.author
+        :margin-top 0
+        :text-align right
+        :line-height 16px
+        .img
+          img
+            :vertical-align -15%
+        .twu
+          :padding-right 5px
   
 form
   .personals
