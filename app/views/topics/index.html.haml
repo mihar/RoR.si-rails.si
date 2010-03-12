@@ -22,5 +22,8 @@
               |
               = link_to 'Odstrani', topic_path(topic), :confirm => 'Ste prepričani?', :method => :delete
 
-%p.crud
-  = link_to 'Nova diskusija', new_topic_path
+.ctrl
+  %p.crud
+    = link_to 'Nova diskusija', new_topic_path
+  
+  = will_paginate @topics

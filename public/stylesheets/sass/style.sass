@@ -60,6 +60,9 @@ a
   +link_sans
   +ultra_small_text
   +crisp_shadow
+.pagination
+  a
+    +crisp_shadow
 #wrap
   +container
   :position absolute
@@ -397,6 +400,7 @@ flash success error notice
         :position absolute
         :right 0
         :top 15px
+        :text-align center
       .time_and_owner
         +column(8)
         +small_sans
@@ -414,23 +418,37 @@ flash success error notice
         :padding-top 0
       .postcount
         :top 0
-  .crud
+  .ctrl
     +column(12)
+    :margin-top 20px
+    :padding-top 5px
+    :border-top 3px double #BABABA
+    .crud
+      +column(8)
+      +first
+    .pagination
+      +ui_links
+      +column(4)
+      +last
+      :margin
+        :top 10px
+        :bottom 10px
+      :text-align center
 #posts-index
   table
     +wrapper(12)
     tr
       +wrapper(12)
       .user
-        +column(4)
+        +column(8)
         h2
           :border-bottom 0
           :line-height 25px
       .timestamps
         +small_sans
-        +column(8)
+        +column(4)
         :line-height 25px
-        :text-align right
+        :text-align center
       .gravatar
         +column(2)
         :position absolute
@@ -440,6 +458,7 @@ flash success error notice
         :border-bottom 1px solid #BABABA
         :min-height 125px
         :padding-bottom 10px
+        :padding-top 3px
         +column(10)
         +prepend(2)
         +small_sans
@@ -465,8 +484,19 @@ flash success error notice
       .first
         :margin-top 0
         
-  .crud
+  .ctrl
     +column(12)
+    .crud
+      +column(8)
+      +first
+    .pagination
+      +ui_links
+      +column(4)
+      +last
+      :margin
+        :top 10px
+        :bottom 10px
+      :text-align center
     
 #topics-index .crud, #posts-index .crud,
 #home-events_and_presentations .crud

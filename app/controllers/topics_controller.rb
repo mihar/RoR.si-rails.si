@@ -22,4 +22,11 @@ class TopicsController < InheritedResources::Base
   def destroy
     destroy! { topics_path }
   end
+  
+  protected
+  
+  def collection
+    @topics ||= end_of_association_chain.paginate(:per_page => 30, :page => params[:page])
+  end
+  
 end

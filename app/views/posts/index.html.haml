@@ -27,8 +27,8 @@
               = link_to 'Uredi', edit_topic_post_path(@topic, post)
               |
               = link_to 'Odstrani', [@topic, post], :confirm => 'Ste prepričani?', :method => :delete
-          
-.pagination= will_paginate @posts
 
-%p.crud
-  = link_to 'Novo sporočilo', new_topic_post_path
+.ctrl
+  %p.crud
+    = link_to 'Novo sporočilo', new_topic_post_path
+  = will_paginate @posts
