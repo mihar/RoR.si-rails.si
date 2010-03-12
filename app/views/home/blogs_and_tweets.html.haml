@@ -4,7 +4,7 @@
     - @blogs.each do |blog|
       %li
         %h3= link_to blog.title, blog.normalized_url
-        .img= image_tag blog.feed.feed_owner.gravatar_url(:size => 16) 
+        .img= image_tag blog.feed.feed_owner.gravatar_url(:size => 45) 
         .author= link_to blog.feed.feed_owner, blog.feed.feed_owner
         .summary= blog.short_summary
 #twitter

@@ -18,8 +18,8 @@ class HomeController < ApplicationController
   end
   
   def blogs_and_tweets
-    @blogs = Entry.recent(25)
-    @tweets = Tweet.recent(50)
+    @blogs = Entry.recent(10)
+    @tweets = Tweet.recent(15)
   end
   
   def developers_and_apps

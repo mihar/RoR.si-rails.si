@@ -70,7 +70,7 @@ a
         :line-height 35px
         :color white
         +link_sans
-        :text-shadow 1px 1px 1px #454545
+        :text-shadow 0px 1px 1px #454545
         :border-top = "3px solid" + !red_lite
         :padding-top 6px
         :padding-bottom 13px
@@ -102,6 +102,7 @@ a
     li
       +link_sans
       +ultra_small_text
+      :text-shadow 0px 1px 2px #BABABA
     li.link_img
       :position absolute
       :left 0px
@@ -420,7 +421,23 @@ flash success error notice
       +first
       +last
     ol
+      :position relative
       :list-style none
+      .img
+        :position absolute
+        :right 0
+        :margin-top -36px
+      h3
+        :margin-bottom 0
+        :padding-right 50px
+      .author
+        :margin-top -10px
+        a
+          :color = !gray_dark
+          +small_text
+      .summary
+        :border-bottom 1px solid #BABABA
+        :padding-bottom 20px
   #twitter
     h2
       +column(4)
