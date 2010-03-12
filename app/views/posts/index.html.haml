@@ -8,6 +8,7 @@
 %table
   - @posts.each_with_index do |post, i|
     %tbody{:class => "post_#{i}"}
+      %a{:name => post.anchor}
       %tr.first
         %td.user
           %h2
