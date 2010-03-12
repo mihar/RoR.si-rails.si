@@ -6,9 +6,11 @@ module RestrictToOwner
       private
       
       def restrict_data_alteration
-        unless current_user.send("owns_#{controller_name.singularize}?", resource)
-          flash[:error] = "Spreminja lahko samo lastnik."
-          redirect_to root_path
+        unless current_user.admin?
+          unless current_user.send("owns_#{controller_name.singularize}?", resource)
+            flash[:error] = "Spreminja lahko samo lastnik."
+            redirect_to root_path
+          end
         end
       end
     }

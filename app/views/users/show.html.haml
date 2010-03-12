@@ -28,7 +28,7 @@
 #blogs
   %h2 Blogi
   - if @user.feed
-    %ol#entries= render @user.feed.entries
+    %ol#entries= render @user.feed.entries.limited(15)
 #twitter
   %h2 Tweeti
-  %ol#tweets= render @user.tweets
+  %ol#tweets= render @user.tweets.limited(15)
