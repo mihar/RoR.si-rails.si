@@ -6,19 +6,19 @@
   %ul
     - if @user.homepage?
       %li.homepage
-        %h3 Domača stran:
+        %h3 Domača stran
         %p.link= link_to_self @user.homepage
     - if @user.linkedin?
       %li.linkedin
-        %h3 Linked in:
+        %h3 Linked in
         %p.link= link_to_self @user.linkedin
     - if @user.twitter?
       %li.twitter
-        %h3 Twitter:
+        %h3 Twitter
         %p.link= link_to_twitter @user.twitter
     - if @user.github?
       %li.github
-        %h3 Github:
+        %h3 Github
         %p.link= link_to_github @user.github
 
 #topics
