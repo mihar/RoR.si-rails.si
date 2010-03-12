@@ -25,11 +25,11 @@ namespace :vlad do
     Rake::Task['vlad:start_app'].invoke
   end
 
-  desc "Cleanup SASS leftovers"
-  remote_task :cleanup_sass do
-    puts "Cleaning up SASS leftovers..."
-    run "rm #{current_release}/public/stylesheets/*.css;"
-  end
-  
-  remote_task :start_app => :cleanup_sass
+  # desc "Cleanup SASS leftovers"
+  # remote_task :cleanup_sass do
+  #   puts "Cleaning up SASS leftovers..."
+  #   run "rm #{current_release}/public/stylesheets/*.css;"
+  # end
+  # 
+  # remote_task :start_app => :cleanup_sass
 end

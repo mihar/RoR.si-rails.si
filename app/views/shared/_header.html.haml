@@ -17,9 +17,10 @@
     - rails_si_head = "Rails.si"
   .masthead
     %h1= link_to rails_si_head, root_path
-  - img = image_tag current_user.gravatar_url(:size => 40)    	
   %ul.authentication
-    %li.link_img
-      = link_to img, current_user
+    - if current_user
+      - img = image_tag current_user.gravatar_url(:size => 40)    	
+      %li.link_img
+        = link_to img, current_user
     - authentication_links.each_with_index do |link, i|
       %li{:class => "link_" + i.to_s}= link
