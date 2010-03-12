@@ -11,4 +11,6 @@
   %p
     = form.text_field :homepage_url
     
-  .buttons= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
+  .buttons
+    = form.hidden_field :user_id
+    = form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'

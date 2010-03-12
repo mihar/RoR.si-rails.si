@@ -1,5 +1,14 @@
 = title "Predavanja"
 - collection.each do |presentation|
-  %p
-    %h3= link_to presentation.title, presentation
+  .presentation
+    %h2
+      = link_to presentation.title, presentation
+    %p.speaker
+      == by #{presentation.speaker}
+    .description
+      = presentation.description_html
+      
 = will_paginate collection
+
+%p.crud
+  = link_to "Novo predavanje", new_presentation_path

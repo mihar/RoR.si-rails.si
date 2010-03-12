@@ -1,6 +1,6 @@
-.crud
-  %p= link_to 'Odstrani', presentation_path(@presentation), :method => :delete, :confirm => 'Ste prepričani?'
-
 = title "Uredi predstavitev"
 = error_messages_for :presentation
 = render "form"
+
+.crud
+  %p= link_to 'Odstrani', presentation_path(@presentation), :method => :delete, :confirm => 'Ste prepričani?'

@@ -1,2 +1,7 @@
 .app
   = link_to app, app.homepage_url
+  .crud
+    - restrict_to_owner(app) do
+      = link_to "Uredi", edit_app_path(app)
+      |
+      = link_to "Odstrani", app, :method => :delete, :confirm => "Ste prepričani?"
