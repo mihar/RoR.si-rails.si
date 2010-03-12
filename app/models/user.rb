@@ -54,19 +54,27 @@ class User < ActiveRecord::Base
   end
   
   def owns_post?(post)
-    posts.include? post
+    post.user == self
   end
   
   def owns_project?(project)
-    projects.include? project
+    project.user == self
   end
   
   def owns_presentation?(presentation)
-    presentations.include? presentation    
+    presentation.user = self
   end
   
   def owns_topic?(topic)
-    topics.include? topic
+    topic.user = self
+  end
+  
+  def owns_event?(event)
+    event.user == self
+  end
+  
+  def owns_app?(app)
+    app.user == self
   end
 
   private

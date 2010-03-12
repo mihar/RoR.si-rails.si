@@ -1,8 +1,5 @@
-#index
-  .ribbon
-    .row
-      %h2 Predavanja
-      - collection.each do |presentation|
-        %p
-          %h3= link_to presentation.title, presentation
-      = will_paginate collection
+= title "Predavanja"
+- collection.each do |presentation|
+  %p
+    %h3= link_to presentation.title, presentation
+= will_paginate collection

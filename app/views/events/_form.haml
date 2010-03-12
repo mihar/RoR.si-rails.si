@@ -30,4 +30,5 @@
       == Oblikuj besedilo z #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
 
   .buttons
+    = form.hidden_field :user_id
     = form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'

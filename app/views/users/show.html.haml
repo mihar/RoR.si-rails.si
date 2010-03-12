@@ -28,7 +28,8 @@
         %p.date=l post.created_at, :format => :simple
 #blogs
   %h2 Blogi
-  %ol#entries= render @user.feed.entries
+  - if @user.feed
+    %ol#entries= render @user.feed.entries
 #twitter
   %h2 Tweeti
   %ol#tweets= render @user.tweets

@@ -1,4 +1,6 @@
 class TopicsController < InheritedResources::Base
+  include RestrictToOwner
+  
   actions :all, :except => :show
   
   def new

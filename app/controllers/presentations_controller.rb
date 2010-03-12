@@ -1,4 +1,5 @@
 class PresentationsController < InheritedResources::Base
+  include RestrictToOwner
   actions :new, :create, :edit, :update, :destroy, :show, :index
 
   def new

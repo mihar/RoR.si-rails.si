@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100312142605) do
+ActiveRecord::Schema.define(:version => 20100312150841) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -179,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20100312142605) do
     t.string   "linkedin"
     t.text     "about"
     t.string   "permalink"
+    t.boolean  "admin"
   end
 
   add_index "users", ["company_id"], :name => "index_users_on_company_id"

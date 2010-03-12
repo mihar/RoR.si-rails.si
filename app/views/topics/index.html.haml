@@ -16,10 +16,11 @@
             - img = image_tag topic.user.gravatar_url(:size => 16)
             = link_to img + " " + topic.user.to_s, topic.user
         %td.crud
-          %p
-            = link_to 'Uredi', edit_topic_path(topic)
-            |
-            = link_to 'Odstrani', topic_path(topic), :confirm => 'Ste prepričani?', :method => :delete
+          - restrict_to_admin do
+            %p
+              = link_to 'Uredi', edit_topic_path(topic)
+              |
+              = link_to 'Odstrani', topic_path(topic), :confirm => 'Ste prepričani?', :method => :delete
 
 %p.crud
   = link_to 'Nova diskusija', new_topic_path

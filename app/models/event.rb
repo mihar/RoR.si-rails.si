@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
   include Pacecar
   include Permalink
 
+  belongs_to :user
   validates_presence_of :date, :title, :location
 
   has_markup :description,

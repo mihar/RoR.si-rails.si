@@ -7,7 +7,7 @@
       = @presentation.location
   - unless @presentation.date_of.nil?
     %p.date
-      = @presentation.date_of.to_s(:fancy_date)
+      = l @presentation.date_of, :format => :simple
   .description
     = @presentation.description_html
     %p.link= link_to "Povezava do predavanja", @presentation.url
@@ -16,4 +16,5 @@
       -#.detail= @presentation.embed
       -#.label Watch
 .crud
-  %p= link_to 'Uredi', edit_presentation_url(@presentation)
+  - restrict_to_owner(@presentation) do
+    %p= link_to 'Uredi', edit_presentation_url(@presentation)

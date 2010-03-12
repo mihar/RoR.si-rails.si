@@ -1,4 +1,5 @@
 class PostsController < InheritedResources::Base
+  include RestrictToOwner
   belongs_to :topic
   
   def create

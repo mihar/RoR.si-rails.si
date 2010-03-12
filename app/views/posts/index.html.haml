@@ -16,10 +16,11 @@
           %p
             = l post.updated_at, :format => :simple
         %td.crud
-          %p
-            = link_to 'Uredi', edit_topic_post_path(@topic, post)
-            |
-            = link_to 'Odstrani', [@topic, post], :confirm => 'Ste prepričani?', :method => :delete
+          - restrict_to_owner(post) do
+            %p
+              = link_to 'Uredi', edit_topic_post_path(@topic, post)
+              |
+              = link_to 'Odstrani', [@topic, post], :confirm => 'Ste prepričani?', :method => :delete
       %tr.second
         %td.gravatar
           - img = image_tag(post.user.gravatar_url(:size => 90))
