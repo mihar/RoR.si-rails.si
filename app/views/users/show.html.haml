@@ -3,19 +3,23 @@
 
 .moreinfo
   .about= @user.about
-  %dl
+  %ul
     - if @user.homepage?
-      %dt.homepage Domača stran:
-      %dd.homepage= link_to_self @user.homepage
+      %li.homepage
+        %h3 Domača stran:
+        %p.link= link_to_self @user.homepage
     - if @user.linkedin?
-      %dt.linkedin Linked in:
-      %dd.linkedin= link_to_self @user.linkedin
+      %li.linkedin
+        %h3 Linked in:
+        %p.link= link_to_self @user.linkedin
     - if @user.twitter?
-      %dt.twitter Twitter:
-      %dd.twitter= link_to_twitter @user.twitter
+      %li.twitter
+        %h3 Twitter:
+        %p.link= link_to_twitter @user.twitter
     - if @user.github?
-      %dt.github Github:
-      %dd.github= link_to_github @user.github
+      %li.github
+        %h3 Github:
+        %p.link= link_to_github @user.github
 
 #topics
   %h2 Diskusije

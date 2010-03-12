@@ -693,24 +693,34 @@ flash success error notice
     +bold
 
 #users-show
+  #content
+    :padding-top 20px
   h1
-    :margin-bottom 30px
   .avatar
     +column(4)
   .moreinfo
     +wrapper(8)
     .about
       +column(8)
-    dl
+    ul
+      :list-style none
       +wrapper(8)
-      dt
-        +column(2)
-        +small_text
-      dd
-        +small_sans
-        :font-size 18px
-        +column(6)
-        :word-wrap break-word
+      li
+        +wrapper(8)
+        h3
+          +column(3)
+          +small_text
+          :line-height 20px
+          :margin-top 5px
+          :margin-bottom 5px
+        p
+          +small_sans
+          :font-size 18px
+          +column(5)
+          :line-height 20px
+          :margin-top 5px
+          :margin-bottom 5px
+          :word-wrap break-word
   #posts
     :list-style none
     .post
