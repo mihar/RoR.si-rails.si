@@ -410,6 +410,7 @@ flash success error notice
             :vertical-align -15%
       .crud
         +column(4)
+        :text-align center
         p
           :margin-top 0
     tbody.topic_0
@@ -470,7 +471,7 @@ flash success error notice
           +wrapper(4)
           :margin-left 0
           :margin-right 0
-          :text-align center
+          :text-align left
         code
           :overflow auto
           :max-height 500px
@@ -769,8 +770,10 @@ form
     +last
   .body_input 
     textarea
-      +wrapper(10)
-      :height 600px
+      +wrapper(7)
+      +first
+      +last
+      :height = !column * (7+2) + "px"
   .instruct
     :clear both
     
