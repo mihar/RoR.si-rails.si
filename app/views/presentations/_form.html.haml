@@ -1,33 +1,40 @@
-%div
-  = form.label :title, "Naziv"
-  %div= form.text_field :title
+- form_for @presentation do |form|
+  %p
+    = form.label :title, "Naziv"
+  %p
+    = form.text_field :title
 
-%div
-  = form.label :user_id, "Uporabnik"
-  %div= form.collection_select :user_id, User.all, :id, :twitter
+  %p
+    = form.label :user_id, "Uporabnik"
+  %p
+    = form.collection_select :user_id, User.all, :id, :to_s
 
-%div
-  = form.label :other_speakers, "Ostali predavatelji"
-  %div= form.text_field :other_speakers
+  %p
+    = form.label :other_speakers, "Ostali predavatelji"
+  %p
+    = form.text_field :other_speakers
 
-%div
-  = form.label :url
-  %div= form.text_field :url
+  %p
+    = form.label :url
+  %p
+    = form.text_field :url
 
-%div
-  = form.label :location, "Lokacija"
-  %div= form.text_field :location
+  %p
+    = form.label :location, "Lokacija"
+  %p
+    = form.text_field :location
 
-%div
-  = form.label :date_of, "Datum"
-  %div= form.date_select :date_of
+  %p
+    = form.label :date_of, "Datum"
+  %p
+    = form.date_select :date_of
 
-%div
-  = form.label :description, "Opis"
-  %div= form.text_area :description
+  %p
+    = form.label :description, "Opis"
+  %p
+    = form.text_area :description
   %p.instruct
     == Format description using #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
 
--#%div
-  -#= form.label :embed
-  -#%div= form.text_area :embed
+  .buttons
+    %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'

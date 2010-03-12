@@ -1,11 +1,3 @@
-#new
-  .ribbon
-    .row
-      %h2 Novo predavanje
-      = error_messages_for :presentation
-
-      - form_for @presentation do |form|
-        .fieldset
-          = partial 'presentations/form', :form => form
-        .buttons
-          = form.submit 'Ustvari', :disable_with => 'Prosimo počakajte...'
+= title "Novo predavanje"
+= error_messages_for :presentation
+= render "form"

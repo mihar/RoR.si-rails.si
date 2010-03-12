@@ -11,3 +11,7 @@
   .twitter= link_to_twitter @user.twitter
 - if @user.github?
   .github= link_to_github @user.github
+  
+%ol#tweets= render @user.tweets
+%ol#entries= render @user.feed.entries
+%ol#posts= render @user.posts

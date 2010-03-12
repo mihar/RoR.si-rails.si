@@ -1,7 +1,7 @@
 = error_messages_for :post
 - form_for [@topic, @post] do |form|
   %fieldset
-    %div= form.text_area :body
+    %p= form.text_area :body
     %p.instruct
       == Oblikuj besedilo z #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
       

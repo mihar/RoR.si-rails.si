@@ -15,4 +15,11 @@ class PostsController < InheritedResources::Base
   def destroy
     destroy! { topic_posts_path }
   end
+  
+  protected
+  
+  def collection
+    @posts ||= end_of_association_chain.by_created_at(:desc).paginate(:page => params[:page])
+  end
+  
 end

@@ -1,23 +1,11 @@
 #blogs
   %h2 Blogi
   %ol
-    - @blogs.each do |blog|
-      %li
-        %h3= link_to blog.title, blog.normalized_url
-        .img= image_tag blog.feed.feed_owner.gravatar_url(:size => 45) 
-        .author= link_to blog.feed.feed_owner, blog.feed.feed_owner
-        .summary= blog.short_summary
+    = render @blogs
 #twitter
   %h2 Tweeti
   %ol
-    - @tweets.each do |tweet|
-      %li
-        %p.tweet= tweet_format(tweet.text)
-        %p.author
-          - img = image_tag(tweet.user.gravatar_url(:size => 16))
-          - twu = tweet.user.twitter
-          = link_to twu, "http://twitter.com/#{twu}", {:class => "twu"}
-          = link_to img, user_path(tweet.user), {:class => "img"}
+    = render @tweets
           
       
 = title "Zapisi in tweets", false

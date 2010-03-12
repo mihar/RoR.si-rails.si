@@ -28,6 +28,8 @@
           = link_to img, post.user
         %td.body{:colspan => 3}
           = post.cached_body_html
+          
+.pagination= will_paginate @posts
 
 %p.crud
   = link_to 'Novo sporočilo', new_topic_post_path

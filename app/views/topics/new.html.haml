@@ -3,15 +3,20 @@
 
 - form_for @topic do |form|
   %fieldset
-    %div
+    %p
       = form.label :title, "Naziv"
-      %div= form.text_field :title
+    %p
+      = form.text_field :title
       
     - form.fields_for :posts do |post_form|
-      %div
+      %p
         = post_form.hidden_field :user_id
         = post_form.label :body, "Besedilo"
-        %div= post_form.text_area :body
+      %p
+        = post_form.text_area :body
+      %p.instruct
+        == Oblikuj besedilo z #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
+    
         
     .buttons
       %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'

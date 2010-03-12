@@ -1,16 +1,18 @@
-#people
-  .row
-    %h2 Prijava
+= title "Prijava"
 
-    - form_for :session, :url => session_path do |form|
-      .text_field
-        = form.label :email
-        = form.text_field :email
-      .password_field
-        = form.label :password
-        = form.password_field :password
-      .checkbox_field
-        = form.check_box :remember_me
-        = form.label :remember_me
-      .submit_field
-        = form.submit "Prijava", :disable_with => "Prosimo počakajte..."
+- form_for :session, :url => session_path do |form|
+  %fieldset
+    %p
+      = form.label :email
+    %p
+      = form.text_field :email
+    %p
+      = form.label :password, "Geslo"
+    %p
+      = form.password_field :password
+    %p
+      = form.check_box :remember_me
+      = form.label :remember_me, "Hočem piškotek"
+    
+    .buttons
+      = form.submit "Prijava", :disable_with => "Prosimo počakajte..."

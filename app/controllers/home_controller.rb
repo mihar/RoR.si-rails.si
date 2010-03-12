@@ -2,14 +2,14 @@ class HomeController < ApplicationController
 
   def index
     @upcoming_event         = Event.next(1).first
-    @recent_presentations   = Presentation.ordered.limited(3)
-    @recent_topics          = Topic.recent(6)
-    @recent_tweets          = Tweet.recent(3)
-    @recent_blogs           = Entry.recent(6)
-    @recent_apps            = App.ordered("created_at desc").limited(6)
-    @recent_jobs            = Job.ordered.limited(6)
+    @recent_presentations   = Presentation.ordered.limited 3
+    @recent_topics          = Topic.recent 6
+    @recent_tweets          = Tweet.recent 3
+    @recent_blogs           = Entry.recent 6
+    @recent_apps            = App.ordered("created_at desc").limited 6 
+    @recent_jobs            = Job.ordered.limited 6
     
-    @users                  = User.ordered("updated_at desc")
+    @users                  = User.ordered("updated_at desc").limited(6)
   end
   
   def events_and_presentations

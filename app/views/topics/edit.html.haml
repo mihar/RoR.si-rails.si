@@ -3,9 +3,10 @@
 
 - form_for @topic do |form|
   %fieldset
-    %div
+    %p
       = form.label :title, "Naziv"
-      %div= form.text_field :title
+    %p
+      = form.text_field :title
 
     .buttons
       %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'

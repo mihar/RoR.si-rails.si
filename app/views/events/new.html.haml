@@ -1,11 +1,6 @@
 - if @template_event
-  - title "Kopija #{@template_event}"
+  = title "Kopija #{@template_event}"
 - else
-  - title "Nov dogodek"
+  = title "Nov dogodek"
 = error_messages_for :event
-
-- form_for(@event) do |form|
-  .fieldset
-    = partial '/events/fields', :form => form
-    .buttons
-      = form.submit 'Create', :disable_with => 'Prosimo počakajte...'
+= render "form"

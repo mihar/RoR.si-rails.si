@@ -1,7 +1,2 @@
-#people
-  .row
-    %h2
-      Registracija
-    -form_for @user do |form|
-      = render :partial => '/users/form', :object => form
-      = form.submit 'Registracija', :disable_with => 'Prosimo počakajte...'
+= title "Registracija"
+= render "form"

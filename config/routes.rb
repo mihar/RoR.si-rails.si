@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
     topic.resources :posts, :as => 'sporocila'
   end
   map.resources :jobs, :collection => {:old => :get}, :as => 'delovna-mesta'
-  map.resources :presentations, :as => 'predstavitve'
+  map.resources :presentations, :as => 'predavanja'
   map.resources :projects, :as => 'projekti'
   map.resources :apps, :as => 'aplikacije'
   map.resources :events, :member => { :copy => :get }, :as => 'dogodki'

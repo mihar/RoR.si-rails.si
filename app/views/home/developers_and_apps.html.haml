@@ -1,0 +1,11 @@
+= title "Razvijalci in aplikacije", false
+
+#developers
+  %h2 Razvijalci
+  = render @users
+  
+#apps
+  %h2 Aplikacije
+  = render @apps
+  
+.crud= link_to "Nova aplikacija", new_app_path

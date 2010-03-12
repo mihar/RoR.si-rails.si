@@ -1,0 +1,7 @@
+%li
+  %p.tweet= tweet_format(tweet.text)
+  %p.author
+    - img = image_tag(tweet.user.gravatar_url(:size => 16))
+    - twu = tweet.user.twitter
+    = link_to twu, "http://twitter.com/#{twu}", {:class => "twu"}
+    = link_to img, user_path(tweet.user), {:class => "img"}
