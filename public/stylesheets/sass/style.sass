@@ -480,13 +480,15 @@ flash success error notice
           :margin-right 0
           :text-align left
         code
-          :overflow auto
-          :max-height 500px
-          :display block
+          :background #ECECEC
           :font
-            :family "Menlo-Regular", Consolas, Lucida Console, "Monaco", monospace
+            :family "Menlo-Regular", "Monaco", Consolas, Lucida Console, monospace
             :size 12px
-          :line-height 15px 
+          pre &
+            :line-height 15px 
+            :max-height 500px
+            :overflow auto
+            
     tr.first
       :margin-top 10px
     .post_0
