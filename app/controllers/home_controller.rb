@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @recent_presentations   = Presentation.limited 3
     @recent_topics          = Topic.recent 6
     @recent_tweets          = Tweet.recent 3
-    @recent_blogs           = Entry.recent 6
+    @recent_blogs           = Entry.recent 10
     @recent_apps            = App.ordered("created_at desc").limited 6 
     @recent_jobs            = Job.all
     # @features_project       = Project.featured
