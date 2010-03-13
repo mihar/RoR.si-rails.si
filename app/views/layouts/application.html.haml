@@ -7,10 +7,11 @@
     = yield :head
   %body{body_attrs}
     #wrap
-      = render :partial => '/shared/header'
+      = partial '/shared/header'
       = partial 'shared/subnav'
       #content
         = partial 'shared/flashes'
         = yield
       = partial 'shared/footer'
     = yield :javascripts
+    = partial "shared/analytics" if Rails.env.production?
