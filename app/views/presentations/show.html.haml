@@ -1,4 +1,5 @@
-= title link_to(@presentation.title, @presentation.url)
+- title @presentation.title, false
+%h1= link_to(@presentation.title, @presentation.url)
 .details
   %p.speaker
     == by #{@presentation.speaker}
@@ -7,7 +8,7 @@
       = @presentation.location
   - unless @presentation.date_of.nil?
     %p.date
-      = l @presentation.date_of, :format => :simple
+      = l @presentation.date_of.to_date, :format => :simple
   .description
     = @presentation.description_html
     %p.link= link_to "Povezava do predavanja", @presentation.url

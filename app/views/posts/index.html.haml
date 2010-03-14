@@ -25,7 +25,7 @@
           - restrict_to_owner(post) do
             %p.crud
               = link_to 'Uredi', edit_topic_post_path(@topic, post)
-              |
+              &nbsp;
               = link_to 'Odstrani', [@topic, post], :confirm => 'Ste prepričani?', :method => :delete
 
 .ctrl
