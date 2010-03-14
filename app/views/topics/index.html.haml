@@ -12,10 +12,10 @@
       %tr
         %td.time_and_owner
           %p
-            = l topic.created_at, :format => :simple
-            by
             - img = image_tag topic.user.gravatar_url(:size => 16)
             = link_to img + " " + topic.user.to_s, topic.user
+            na
+            = l topic.created_at, :format => :simple
         %td.crud
           - restrict_to_admin do
             %p

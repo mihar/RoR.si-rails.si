@@ -10,6 +10,7 @@
 !green_bkg = rgb(238, 255, 204)
 !red_lite = #b45136
 !red_mid = #ab3425
+!gray_black = rgb(32, 32, 32)
 !gray_dark = rgb(68, 68, 68)
 !gray_lite = rgb(153, 153, 153)
 !default_gray = rgb(102, 102, 102)
@@ -33,6 +34,8 @@
   :text-shadow 0px 1px 1px #f5ffe0
 =large_crisp_shadow
   :text-shadow 1px 2px 1px #f5ffe0
+=lite_shadow
+  :text-shadow 0px 1px 1px #DDD
 =mid_shadow
   :text-shadow 0px 1px 1px #BABABA
 =dark_shadow
@@ -57,6 +60,8 @@ body
 
 a
   :color = !red
+  &:hover
+    :color = !gray_black
 .crud
   :padding-top 5px
   +link_sans
@@ -274,8 +279,13 @@ flash success error notice
       :color = !gray_dark
       &:hover
         :color = !red
+        +crisp_shadow
   h3
+    :color = !red
     +crisp_shadow
+    a:hover
+      :color = !gray_black + " !important"
+      +lite_shadow
   form
     +column(12)
   .row

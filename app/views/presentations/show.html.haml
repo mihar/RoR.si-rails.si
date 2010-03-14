@@ -2,7 +2,7 @@
 %h1= link_to(@presentation.title, @presentation.url)
 .details
   %p.speaker
-    == by #{@presentation.speaker}
+    == #{@presentation.speaker}
   - unless @presentation.location.nil? || @presentation.location.empty?  
     %p.location
       = @presentation.location

@@ -6,7 +6,7 @@
   %p.location
     = @event.location
   %p.date
-    = @event.date.to_s(:fancy_date_with_time)
+    = l @event.date, :format => :simple
 
   .description
     = @event.cached_description_html

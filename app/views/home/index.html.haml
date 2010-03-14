@@ -18,7 +18,6 @@
         %tr
           %td.user
             %p
-              by
               = topic.user
           %td.infos
             %p
@@ -30,7 +29,7 @@
     - @recent_presentations.each do |presentation|
       %li
         %h3= link_to presentation.title, presentation
-        %p== by #{presentation.speaker}
+        %p== #{presentation.speaker}
 
 #events
   %h2= link_to "Dogodki", events_and_presentations_path(:anchor => "events")
