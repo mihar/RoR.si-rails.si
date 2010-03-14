@@ -40,6 +40,17 @@
   :text-shadow 0px 1px 1px #BABABA
 =dark_shadow
   :text-shadow 0px 1px 1px #454545
+  
+=radius
+  -moz-border-radius: 7px
+  -webkit-border-radius: 7px
+=small_radius
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+=micro_radius
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  
 
 =link_sans
   +small_text
@@ -69,8 +80,7 @@ a
   +crisp_shadow
   a
     :background = !green_bkg
-    :-moz-border-radius 7px
-    :-webkit-border-radius 7px
+    +radius
     :padding
       :top 5px
       :bottom 5px
@@ -184,8 +194,7 @@ a
     +column(4)
     :list-style none
     :background #f5ffe0 url(/images/navdropside_flip.gif) repeat-y left
-    :-moz-border-radius 7px
-    :-webkit-border-radius 7px
+    +radius
     :padding
       :top = !gutter/4 + "px"
       :bottom = !gutter/4 + "px"
@@ -281,11 +290,12 @@ flash success error notice
         :color = !red
         +crisp_shadow
   h3
-    :color = !red
-    +crisp_shadow
-    a:hover
-      :color = !gray_black + " !important"
-      +lite_shadow
+    a
+      :color = !red
+      +crisp_shadow
+      &:hover
+        :color = !gray_black + " !important"
+        +lite_shadow
   form
     +column(12)
   .row
@@ -368,6 +378,7 @@ flash success error notice
           .img
             img
               :vertical-align -15%
+              +micro_radius
           .twu
             :padding-right 5px
   #people
@@ -376,6 +387,8 @@ flash success error notice
       +column(4)
     .devs
       +column(4)
+      +radius
+      :overflow hidden
       a
         :display inline
         :float left
@@ -487,6 +500,9 @@ flash success error notice
         :position absolute
         :left 0
         :top 10px
+        img
+          +radius
+          
       .body
         :margin-top -10px
         :border-bottom 1px solid #BABABA
@@ -600,8 +616,10 @@ flash success error notice
 
 #home-developers_and_apps
   #developers
-    :padding-top 10px
+    :margin-top 10px
     +column(12)
+    +radius
+    :overflow hidden
     a
       :display inline
       :float left
@@ -662,6 +680,8 @@ flash success error notice
         :margin-bottom 4px
         :padding-right 70px
         :line-height 30px
+      img
+        +small_radius
       .summary
         :border-bottom 1px solid #BABABA
         :padding-bottom 20px
@@ -729,10 +749,13 @@ flash success error notice
 #users-show
   .avatar
     +column(4)
-    :padding-top 9px
+    :margin-top 10px
+    img
+      +radius
   .moreinfo
     :padding-top 9px
     +wrapper(8)
+    :min-height 220px
     .about
       +column(8)
     ul
@@ -793,6 +816,8 @@ flash success error notice
         :padding-top 2px
       .img
         :top 50px
+        img
+          +small_radius
     .entry_0
       h3
         :padding-top 0

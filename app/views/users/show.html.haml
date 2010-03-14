@@ -21,7 +21,7 @@
         %h3 Github
         %p.link= link_to_github @user.github
 
-- if @user.posts.size > 0
+- if @user.posts.size > 0 && false
   #topics
     %h2 Diskusije
     %ol#posts
@@ -35,10 +35,11 @@
     #blogs
       %h2 Blogi
       - if @user.feed
-        %ol#entries= render @user.feed.entries.limited(15)
+        - entries = @user.feed.entries.limited(15)
+        %ol#entries= render entries
     #twitter
       %h2 Tweeti
-      %ol#tweets= render @user.tweets.limited(15)
+      %ol#tweets= render @user.tweets.limited(entries.size * 2)
   - else
     #blogs.blogs_only
       %h2 Blogi
