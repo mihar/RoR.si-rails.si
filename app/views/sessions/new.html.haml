@@ -1,11 +1,12 @@
 = title "Prijava"
 
 - form_for :session, :url => session_path do |form|
-  %fieldset
+  .personals
     %p
       = form.label :email
     %p
       = form.text_field :email
+  .elsewheres
     %p
       = form.label :password, "Geslo"
     %p
@@ -14,5 +15,5 @@
       = form.check_box :remember_me
       = form.label :remember_me, "Hočem piškotek"
     
-    .buttons
-      = form.submit "Prijava", :disable_with => "Prosimo počakajte..."
+  .buttons
+    = form.submit "Prijava", :disable_with => "Prosimo počakajte..."

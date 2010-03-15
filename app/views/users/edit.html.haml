@@ -1,4 +1,4 @@
-=title "Moj račun"
+=title "Nastavitve profila"
 = error_messages_for :user
 
 - form_for setup_user(@user) do |user_form|
@@ -17,22 +17,24 @@
         = user_form.label :email
       %p
         = user_form.text_field :email
+      %p.instruct
+        Uporabljen za
+        = link_to "gravatar", "http://gravatar.com"
       
     .fieldset
       %p
         = user_form.label :about, "Par besed"
       %p
-        = user_form.text_area :about, :rows => 10
+        = user_form.text_area :about, :rows => 5
   .elsewheres
     .fieldset
       %p
-        = user_form.label :twitter
+        = user_form.label :twitter, "Twitter username"
       %p
         = user_form.text_field :twitter
-      %p.instruct Navedite uporabniško ime, npr: janez_n
 
       %p
-        = user_form.label :github
+        = user_form.label :github, "GitHub username"
       %p
         = user_form.text_field :github
       /
