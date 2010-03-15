@@ -3,5 +3,6 @@
   %p.author
     - img = image_tag(tweet.user.gravatar_url(:size => 16))
     - twu = tweet.user.twitter
-    = link_to twu, "http://twitter.com/#{twu}", {:class => "twu"}
+    - twi = tweet.twitter_id
+    = link_to twu, "http://twitter.com/#{twu}/status/#{twi}", {:class => "twu"}
     = link_to img, user_path(tweet.user), {:class => "img"}
