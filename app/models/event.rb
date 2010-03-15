@@ -18,6 +18,8 @@ class Event < ActiveRecord::Base
   before_save      :geocode_location
   acts_as_mappable :default_units => :miles
 
+  default_scope :order => "date desc"
+
   named_scope :next, lambda {|*args|
     limit = args.first || 1
     { :conditions => ['date > ?', DateTime.now],

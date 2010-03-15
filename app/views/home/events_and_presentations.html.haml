@@ -2,7 +2,7 @@
 #events
   - @events.each_with_index do |event, i|
     .event{:class => "event_#{i}"}
-      %h2= link_to event.title, event
+      %h3= link_to event.title, event
       %p.time
         =l event.date, :format => :simple
       %p.desc
@@ -14,13 +14,16 @@
     
 %h1.secondary Predavanja
 #presentations
-  - @presentations.each do |presentation|
-    .presentation
-      %h2
-        = link_to presentation.title, presentation
-      %p.speaker
-        == #{presentation.speaker}
-      .description
-        = presentation.description_html
+  - @presentations.in_groups_of(2) do |presentation_pair|
+    .presentation_pair
+      - presentation_pair.each do |presentation|
+        - unless presentation.nil?
+          .presentation
+            %h3
+              = link_to presentation.title, presentation
+            %p.speaker
+              == #{presentation.speaker}
+            .description
+              = presentation.description_html
   %p.crud
     = link_to "Novo predavanje", new_presentation_path
