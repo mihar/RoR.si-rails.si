@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @upcoming_event         = Event.next(1).first
-    @recent_presentations   = Presentation.limited 2
+    @recent_presentations   = Presentation.all.sort_by(&:rand)[0..1]
     @recent_topics          = Topic.recent 6
     @recent_tweets          = Tweet.recent 3
     @recent_blogs           = Entry.recent 10
@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   
   def events_and_presentations
     @events = Event.all
-    @presentations = Presentation.all
+    @presentations = Presentation.all.sort_by(&:rand)
   end
   
   def blogs_and_tweets
@@ -23,8 +23,8 @@ class HomeController < ApplicationController
   end
   
   def developers_and_apps
-    @users                  = User.all.sort_by(&:rand)
     @apps                   = App.all
+    @users                  = User.all.sort_by(&:rand)
     @projects               = Project.all.sort_by(&:rand)
   end
 
