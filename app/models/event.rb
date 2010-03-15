@@ -3,7 +3,9 @@ class Event < ActiveRecord::Base
   include Permalink
 
   belongs_to :user
+  belongs_to :topic
   validates_presence_of :date, :title, :location
+  after_create :create_topic
 
   has_markup :description,
     :required   => true,
@@ -62,6 +64,16 @@ class Event < ActiveRecord::Base
       self.lat = geo.lat
       self.lng = geo.lng
     end
+  end
+  
+  def create_topic
+    @topic = Topic.new
+    @topic.title = "Dogodek: #{title}"
+    @topic.user = user
+    @topic.posts.build(:user => user, :body => "Diskusija o dogodku na #{date.to_s(:short)} [&raquo;#{title}&laquo;](/dogodki/#{to_param})\n\n#{description}")
+    @topic.save
+    self.topic = @topic
+    self.save
   end
 
 end

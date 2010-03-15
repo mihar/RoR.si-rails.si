@@ -23,10 +23,10 @@
       = form.label :meetup_url, "Meetup povezava"
     %p
       = form.text_field :meetup_url
-    %p
-      = form.label :topic_id, "Diskusija o dogodku"
-    %p
-      = form.collection_select :topic_id, Topic.all, :id, :title, :include_blank => true
+    / %p
+    /   = form.label :topic_id, "Diskusija o dogodku"
+    / %p
+    /   = form.collection_select :topic_id, Topic.all, :id, :title, :include_blank => true
 
   .elsewheres
     %p
