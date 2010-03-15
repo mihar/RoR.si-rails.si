@@ -5,8 +5,8 @@
       %h3= link_to event.title, event
       %p.time
         =l event.date, :format => :simple
-      %p.desc
-        =event.description
+      .desc
+        =event.description_html
       %p.loc
         =event.location
   %p.crud
