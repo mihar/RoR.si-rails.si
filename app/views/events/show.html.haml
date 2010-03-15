@@ -10,13 +10,12 @@
 
   .description
     = @event.cached_description_html
-    
+  
+  %p.meetup.topic  
   - if @event.meetup_url
-    .meetup
-      %p= link_to "Povezava do Meetup dogodka", @event.meetup_url
+    = link_to "Povezava do Meetup dogodka", @event.meetup_url
   - if @event.topic
-    .topic
-      %p= link_to "Povezava do diskusije", topic_posts_path(@event.topic)
+    = link_to "Povezava do diskusije", topic_posts_path(@event.topic)
 
 - if current_user and current_user.owns_event?(@event)
   .crud
