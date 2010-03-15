@@ -12,7 +12,7 @@
         %td.user
           %a{:name => post.anchor}
           %h2
-            =post.user
+            =link_to post.user, post.user
         %td.timestamps
           %p
             = l post.updated_at, :format => :simple          
