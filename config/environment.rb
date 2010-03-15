@@ -27,7 +27,8 @@ Rails::Initializer.run do |config|
   config.gem 'has_markup'
   config.gem "thoughtbot-clearance", 
     :lib     => 'clearance', 
-    :source  => 'http://gems.github.com'
+    :source  => 'http://gems.github.com',
+    :version => "0.6.5"
   config.gem 'thoughtbot-pacecar',
     :lib     => "pacecar",
     :source  => 'http://gems.github.com'
@@ -37,7 +38,7 @@ Rails::Initializer.run do |config|
   config.gem "josevalim-inherited_resources",
     :lib     => "inherited_resources"
   config.gem "le-git"
-  config.gem 'taf2-curb', :lib => 'curb'
+  config.gem 'taf2-curb', :lib => 'curb', :version => "0.2.8.0"
   config.gem "technicalpickles-feedra",
     :lib     => "feedra"
   config.gem "will_paginate"
