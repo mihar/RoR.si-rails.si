@@ -13,10 +13,10 @@
     
   - if @event.meetup_url
     .meetup
-      = link_to "Povezava do Meetup dogodka", @event.meetup_url
+      %p= link_to "Povezava do Meetup dogodka", @event.meetup_url
   - if @event.topic
     .topic
-      = link_to "Povezava do diskusije", topic_posts_path(@event.topic)
+      %p= link_to "Povezava do diskusije", topic_posts_path(@event.topic)
 
 - if current_user and current_user.owns_event?(@event)
   .crud
