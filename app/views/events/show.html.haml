@@ -16,6 +16,10 @@
       = link_to "Povezava do Meetup dogodka", @event.meetup_url
     - if @event.topic
       = link_to "Povezava do diskusije", topic_posts_path(@event.topic)
+      
+  .attending
+    %h2 Prijavljeni
+    %p= @event.attendances.map(&:user).join(", ")
 
 - if current_user and current_user.owns_event?(@event)
   .crud

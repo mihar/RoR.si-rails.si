@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100315093020) do
+ActiveRecord::Schema.define(:version => 20100315114859) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(:version => 20100315093020) do
     t.datetime "updated_at"
     t.string   "permalink"
     t.integer  "user_id"
+  end
+
+  create_table "attendances", :force => true do |t|
+    t.string  "user"
+    t.integer "event_id"
   end
 
   create_table "companies", :force => true do |t|

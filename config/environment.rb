@@ -24,6 +24,7 @@ Rails::Initializer.run do |config|
   config.gem 'gravtastic'
   config.gem 'haml'
   config.gem "json"
+  config.gem "httparty"
   config.gem 'has_markup'
   config.gem "thoughtbot-clearance", 
     :lib     => 'clearance', 

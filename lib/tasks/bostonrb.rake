@@ -14,3 +14,8 @@ desc "Get the latest Github Projects by Slovenia's Rubyists"
 task :get_projects => :environment do
   Cron.get_projects
 end
+
+desc "Get attendances to events from Meetup"
+task :get_attending => :environment do
+  Cron.get_attending
+end
