@@ -863,8 +863,13 @@ flash success error notice
     :left 0
     :right 0
   li
+    :position relative
     +column(4)
     :height 120px
+    .author
+      :position absolute
+      :bottom 0
+      :right 0
 #errorExplanation
   +column(12)
   :width = (!column * 12) + (!gutter * 10) - (!gutter / 5) + "px"

@@ -6,8 +6,8 @@ class HomeController < ApplicationController
     @recent_topics          = Topic.recent 6
     @recent_tweets          = Tweet.recent 3
     @recent_blogs           = Entry.recent 10
-    @recent_apps            = App.all.sort_by(&:rand)[0..6]     
-    @users                  = User.all.sort_by(&:rand)[0..6]
+    @recent_apps            = App.all.sort_by(&:rand)[0..5]     
+    @users                  = User.all.sort_by(&:rand)[0..5]
     # @recent_jobs            = Job.all
     # @features_project       = Project.featured
   end
