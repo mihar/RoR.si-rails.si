@@ -7,6 +7,11 @@
     %p.instruct
       Email je uporabljen za
       = link_to "gravatar", 'http://gravatar.com'
+    %p.instruct.compounded
+      Zaznali smo, da GMail naše potrditvene maile včasih uvrsti med spam. 
+      Če potrditvenega maila ne najdete, poskusite z iskanjem
+      &nbsp; 
+      %code team@rails.si in:spam
   .elsewheres
     %p
       = form.label :password, "Geslo"
@@ -18,10 +23,3 @@
       = form.password_field :password_confirmation
       
   .buttons= form.submit 'Registracija', :disable_with => 'Prosimo počakajte...'
-
-  %p 
-    Zaznali smo, da naše potrditvene maile GMail včasih uvrsti med spam. 
-    Če niste prejeli potrditvenega maila poizkusite v GMail-ovem vmesniku iskati
-    z naslednjo poizvedbo:
-    %code team@rails.si in:spam
-  %p Za nevšečnost se opravičujemo.
