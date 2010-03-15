@@ -1,9 +1,10 @@
-- content_for :beta_sidebar do
-  %ul#jobs
-    - @recent_jobs.each do |job|
-      %li
-        %h3= link_to job.title, job
-        %p= truncate(job.description, :length => 250)
+- unless @recent_jobs.nil?
+  - content_for :beta_sidebar do
+    %ul#jobs
+      - @recent_jobs.each do |job|
+        %li
+          %h3= link_to job.title, job
+          %p= truncate(job.description, :length => 250)
 
 #topics.row
   %h2= link_to 'Diskusije', topics_path
