@@ -6,14 +6,17 @@
       = form.label :email
     %p
       = form.text_field :email
-  .elsewheres
     %p
       = form.label :password, "Geslo"
     %p
       = form.password_field :password
+  .elsewheres
+    %p
+      &nbsp;
     %p
       = form.check_box :remember_me
       = form.label :remember_me, "Hočem piškotek"
-    
-  .buttons
-    = form.submit "Prijava", :disable_with => "Prosimo počakajte..."
+    %p
+      &nbsp;
+    .buttons
+      = form.submit "Prijava", :disable_with => "Prosimo počakajte..."

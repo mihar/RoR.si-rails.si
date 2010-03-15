@@ -30,10 +30,12 @@
     %p
       = form.text_area :description
     %p.instruct
-      == Format description using #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
-
-    %p
-      = form.hidden_field :user_id
+      == Oblikuj besedilo z #{link_to 'Markdown', 'http://daringfireball.net/projects/markdown/syntax'}.
 
   .buttons
-    %p= form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
+    = form.hidden_field :user_id
+    = form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
+    - unless @presentation.new_record?
+      %p.crud.remove
+        = link_to 'Odstrani', presentation_path(@presentation), :method => :delete, :confirm => 'Ste prepričani, da želite odstraniti predavanje?'
+    

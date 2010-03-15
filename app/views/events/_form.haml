@@ -39,3 +39,6 @@
   .buttons
     = form.hidden_field :user_id
     = form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
+    - unless @event.new_record?
+      %p.crud.remove
+        = link_to 'Odstrani', event_path(@event), :method => :delete, :confirm => 'Ste prepričani, da želite odstraniti dogodek?'

@@ -75,10 +75,10 @@ a
     :color = !gray_black
 .crud
   :padding-top 5px
-  +link_sans
-  +ultra_small_text
   +crisp_shadow
   a
+    +link_sans
+    +ultra_small_text
     :background = !green_bkg
     +radius
     :padding
@@ -900,6 +900,8 @@ form
   .elsewheres
     +column(6)
     +last
+    .buttons
+      +prepend(0)
   .instruct
     +small_sans
     +ultra_small_text
@@ -909,10 +911,15 @@ form
     a.instruct
       :float right
   .buttons
+    :position relative
     +column(6)
     +prepend(6)
     +first
     +last
+    .remove
+      :position absolute
+      :right = !gutter + "px"
+      :top -15px
   .body_input 
     textarea
       +wrapper(7)

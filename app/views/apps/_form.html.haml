@@ -1,16 +1,23 @@
 = error_messages_for :app
 
 - form_for @app do |form|
-  %p
-    = form.label :name, "Ime"
-  %p
-    = form.text_field :name
-
-  %p
-    = form.label :homepage_url, "URL domače strani"
-  %p
-    = form.text_field :homepage_url
-    
+  .personals
+    %p
+      = form.label :name, "Ime <span class='instruct'>(naj bo kratko)</span>"
+    %p
+      = form.text_field :name
+  .elsewheres
+    %p
+      = form.label :homepage_url, "URL domače strani"
+    %p
+      = form.text_field :homepage_url
+    %p
+      = form.hidden_field :user_id
+      &nbsp;
   .buttons
-    = form.hidden_field :user_id
+    
     = form.submit 'Shrani', :disable_with => 'Prosimo počakajte...'
+    - unless @app.new_record?
+      %p.crud.remove
+        = link_to 'Odstrani', app_path(@app), :method => :delete, :confirm => 'Ste prepričani, da želite odstraniti aplikacijo?'
+    
