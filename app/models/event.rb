@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :topic
+  has_many :attendances
   validates_presence_of :date, :title, :location
   after_create :create_topic
 
@@ -29,6 +30,7 @@ class Event < ActiveRecord::Base
 
   named_scope :recurring, :conditions => { :recurring => true }
   named_scope :special,   :conditions => { :recurring => false }
+  named_scope :with_meetup, :conditions => "meetup_url IS NOT NULL and meetup_url != ''"
 
   def to_s
     title

@@ -1,4 +1,6 @@
 module Cron
+  include HTTParty
+  
   def self.get_tweets
     client = TwitterSearch::Client.new
     users  = User.with_twitter
@@ -25,6 +27,19 @@ module Cron
           project.github_url  = repo.url
           project.user        = user
           project.save
+        end
+      end
+    end
+  end
+  
+  def self.get_attending
+    base_uri 'api.meetup.com'
+    Event.with_meetup.map do |event|
+      meetup_id = event.meetup_url.split("/").last
+      attending = get("/rsvps", :query => {:event_id => meetup_id, :key => '2639777e374c791b366c38cf33c28'})['results']
+      attending = attending.map do |user|
+        if user['response'] == 'yes'
+          Attendance.add :user => user['name'], :event => event
         end
       end
     end
