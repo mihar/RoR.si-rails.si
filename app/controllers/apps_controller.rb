@@ -6,6 +6,10 @@ class AppsController < InheritedResources::Base
     new! { developers_and_apps_path }
   end
   
+  def update
+    update! { developers_and_apps_path }
+  end
+  
   def create
     create! { developers_and_apps_path }
   end
