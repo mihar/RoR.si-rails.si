@@ -44,8 +44,8 @@ namespace :vlad do
   desc "Cleanup SASS leftovers"
   remote_task :cleanup_sass do
     puts "Cleaning up SASS leftovers..."
-    run "rm #{current_release}/public/stylesheets/style.css;"
+    run "rm #{current_release}/public/stylesheets/style.css 2>/dev/null;"
   end
   
-  remote_task :start_app => :cleanup_sass
+  # remote_task :start_app => :cleanup_sass
 end
