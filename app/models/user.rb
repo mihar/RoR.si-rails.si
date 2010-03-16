@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   include Pacecar
   include Permalink
 
-  is_gravtastic :email, :default => "identicon"
+  is_gravtastic! :email, :default => "identicon"
 
   has_many :presentations
   has_many :tweets
