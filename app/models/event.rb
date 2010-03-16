@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :topic
-  has_many :attendances
+  has_many :attendances, :dependent => :destroy
   validates_presence_of :date, :title, :location
   after_create :create_topic
 
