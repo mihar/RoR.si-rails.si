@@ -11,7 +11,7 @@ class Topic < ActiveRecord::Base
   accepts_nested_attributes_for :posts
   validates_presence_of :title, :user
   
-  default_scope :order => "created_at desc"
+  default_scope :order => "updated_at desc"
   
   def self.recent(limit)
     limited(limit).by_updated_at(:desc).by_created_at(:desc)

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  #TODO redirect to correct action after logging in because of before_filter :authenticate
+
   helper :all
   protect_from_forgery
 

@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_markup :body, :required => true, :cache_html => true
   
+  after_save :update_topic_timestamp
+  
   validates_presence_of :body, :user, :topic
   
   def anchor
@@ -21,6 +23,13 @@ class Post < ActiveRecord::Base
     else
       1
     end
+  end
+  
+  protected
+
+  def update_topic_timestamp
+    topic.updated_at = Time.now
+    topic.save
   end
 
 end
