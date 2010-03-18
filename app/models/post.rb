@@ -10,7 +10,8 @@ class Post < ActiveRecord::Base
   
   after_save :update_topic_timestamp
   
-  validates_presence_of :body, :user, :topic
+  validates_presence_of :body, :user #, :topic
+  # Flaw in validation disallows creating topic if post.topic_id == nil
   
   def anchor
     "p#{id}"
