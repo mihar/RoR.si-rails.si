@@ -30,6 +30,9 @@ module Cron
         end
       end
     end
+    
+    @dead_projects = Project.all :conditions => ["updated_at < ?", 15.minutes.ago]
+    @dead_projects.each(&:destroy)
   end
   
   def self.get_attending
