@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :twitter, :github, :feed_attributes, :company_id, :company, :first_name, :last_name, :homepage, :linkedin, :about
 
-  validates_format_of :twitter, :with => /^\w{1,15}$/, :allow_nil => true
+  validates_format_of :twitter, :with => /^\w{1,15}$/, :allow_nil => true, :allow_blank => true
   before_validation :cleanout_twitter
 
   def to_s
