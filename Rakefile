@@ -5,15 +5,7 @@ require(File.join(File.dirname(__FILE__), 'config', 'boot'))
 
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
 
 require 'tasks/rails'
 
 task :default => [:test, :features]
-
-# Vlad the Deployer
-begin
-  require 'vlad'
-  Vlad.load :app => "passenger", :sct => :git
-rescue LoadError
-end

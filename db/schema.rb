@@ -187,11 +187,14 @@ ActiveRecord::Schema.define(:version => 20100315114859) do
     t.text     "about"
     t.string   "permalink"
     t.boolean  "admin"
+    t.string   "remember_token"
   end
 
   add_index "users", ["company_id"], :name => "index_users_on_company_id"
   add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["id", "remember_token"], :name => "index_users_on_id_and_remember_token"
   add_index "users", ["id", "token"], :name => "index_users_on_id_and_token"
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
   add_index "users", ["token"], :name => "index_users_on_token"
 
 end
