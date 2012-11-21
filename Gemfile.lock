@@ -1,0 +1,118 @@
+GIT
+  remote: https://github.com/croaky/twitter-search.git
+  revision: 7523a3946406d7eec429a12884b1b1dac8f01f0f
+  specs:
+    twitter-search (0.5.8)
+      json (>= 1.1.2)
+
+GIT
+  remote: https://github.com/mihar/le-git.git
+  revision: 07caa9d44015e43c8ee7734cf894f5ce07dbd157
+  specs:
+    le-git (0.2.0)
+      happymapper
+      rest-client
+
+GIT
+  remote: https://github.com/pauldix/feedzirra.git
+  revision: 9681b630e23ec604caac5411eddbd2dc71d70806
+  specs:
+    feedzirra (0.2.0.rc2)
+      curb (~> 0.8.0)
+      loofah (~> 1.2.1)
+      nokogiri (~> 1.5.3)
+      sax-machine (~> 0.2.0.rc1)
+
+PATH
+  remote: /Users/mihar/Code/feedra
+  specs:
+    feedra (0.1.1)
+      feedzirra
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    BlueCloth (1.0.1)
+    RedCloth (4.2.9)
+    actionmailer (2.3.14)
+      actionpack (= 2.3.14)
+    actionpack (2.3.14)
+      activesupport (= 2.3.14)
+      rack (~> 1.1.0)
+    activerecord (2.3.14)
+      activesupport (= 2.3.14)
+    activeresource (2.3.14)
+      activesupport (= 2.3.14)
+    activesupport (2.3.14)
+    builder (3.1.4)
+    chronic (0.8.0)
+    clearance (0.8.8)
+    curb (0.8.3)
+    gravtastic (2.1.3)
+    haml (2.2.3)
+    happymapper (0.4.0)
+      libxml-ruby (~> 2.0)
+    has_markup (0.1.5)
+    has_scope (0.5.1)
+    httparty (0.9.0)
+      multi_json (~> 1.0)
+      multi_xml
+    inherited_resources (1.0.6)
+      has_scope (~> 0.5.0)
+      responders (~> 0.4.6)
+    json (1.7.5)
+    libxml-ruby (2.3.3)
+    loofah (1.2.1)
+      nokogiri (>= 1.4.4)
+    mime-types (1.19)
+    multi_json (1.3.7)
+    multi_xml (0.5.1)
+    mysql (2.9.0)
+    nokogiri (1.5.5)
+    pacecar (1.1.10)
+    pg (0.14.1)
+    rack (1.1.3)
+    rails (2.3.14)
+      actionmailer (= 2.3.14)
+      actionpack (= 2.3.14)
+      activerecord (= 2.3.14)
+      activeresource (= 2.3.14)
+      activesupport (= 2.3.14)
+      rake (>= 0.8.3)
+    rake (10.0.2)
+    responders (0.4.8)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    sax-machine (0.2.0.rc1)
+      nokogiri (~> 1.5.2)
+    truncate_html (0.5.5)
+    utility_scopes (0.3.1)
+    will_paginate (2.3.16)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  BlueCloth
+  RedCloth
+  builder
+  chronic
+  clearance (= 0.8.8)
+  curb (>= 0.2.8.0)
+  feedra!
+  feedzirra!
+  gravtastic (= 2.1.3)
+  haml (= 2.2.3)
+  has_markup
+  httparty
+  inherited_resources (= 1.0.6)
+  json
+  le-git!
+  mysql
+  pacecar (= 1.1.10)
+  pg
+  rails (= 2.3.14)
+  truncate_html
+  twitter-search!
+  utility_scopes
+  will_paginate (~> 2.3)

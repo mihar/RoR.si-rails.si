@@ -21,21 +21,6 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-config.gem 'jferris-mocha', 
-           :version => '0.9.5.0.1241126838',
-           :source  => 'http://gems.github.com', 
-           :lib     => 'mocha'
-config.gem 'factory_girl', 
-           :version => '>= 1.2.2'
-config.gem 'shoulda', 
-           :version => '>= 2.10.2'
-config.gem 'webrat',
-           :version => '= 0.4.4'
-config.gem 'cucumber',
-           :version => '= 0.3.11'
-config.gem 'fakeweb',
-           :version => '= 1.2.0'
-
 HOST = 'localhost'
 
 require 'factory_girl'
