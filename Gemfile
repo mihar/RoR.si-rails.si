@@ -25,7 +25,7 @@ gem "utility_scopes"
 gem "inherited_resources", '1.0.6'
 gem "le-git", :git => 'https://github.com/mihar/le-git.git'
 gem 'curb', ">= 0.2.8.0"
-gem "feedra", :path => '/Users/mihar/Code/feedra'
+gem "feedra", :git => 'https://github.com/mihar/feedra.git'
 gem 'feedzirra', :git => 'https://github.com/pauldix/feedzirra.git'
 gem "will_paginate", '~> 2.3'
 gem 'chronic'

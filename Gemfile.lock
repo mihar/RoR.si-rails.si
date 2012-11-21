@@ -6,6 +6,13 @@ GIT
       json (>= 1.1.2)
 
 GIT
+  remote: https://github.com/mihar/feedra.git
+  revision: ef228d1e14e9b5905189e9e576bbb684ee62bf2d
+  specs:
+    feedra (0.1.1)
+      feedzirra
+
+GIT
   remote: https://github.com/mihar/le-git.git
   revision: 07caa9d44015e43c8ee7734cf894f5ce07dbd157
   specs:
@@ -22,12 +29,6 @@ GIT
       loofah (~> 1.2.1)
       nokogiri (~> 1.5.3)
       sax-machine (~> 0.2.0.rc1)
-
-PATH
-  remote: /Users/mihar/Code/feedra
-  specs:
-    feedra (0.1.1)
-      feedzirra
 
 GEM
   remote: http://rubygems.org/
